@@ -1,0 +1,1502 @@
+<!DOCTYPE html><script type="module" src="../../../_astro/_slug_.astro_astro_type_script_index_0_lang.Ds9P6cqp.js"></script> <html lang="en" data-astro-cid-37fxchfa> <head><script>
+			const theme = localStorage.getItem("theme") ?? "dark";
+			document.documentElement.dataset.theme = theme;
+		</script><script>(function(){const fallbackAvatarSrc = "../../../_astro/temp-default-avatar.D-WdcHIL.png";
+
+			// Missing CDN objects should not render as broken image icons across the site.
+			document.addEventListener("error", (event) => {
+				const image = event.target;
+				if (!(image instanceof HTMLImageElement) || image.dataset.assetFallbackApplied) return;
+				let path;
+				try { path = new URL(image.currentSrc || image.src).pathname; } catch { return; }
+				if (path.startsWith("/cdn/profile/")) {
+					image.dataset.assetFallbackApplied = "true";
+					if (image.classList.contains("banner-image")) {
+						image.closest(".profile-banner")?.classList.remove("has-banner-image");
+						image.remove();
+					} else {
+						image.src = fallbackAvatarSrc;
+					}
+				} else if (path.startsWith("/cdn/thumb/") || path.startsWith("/cosmetics/assets/")) {
+					const cosmetic = path.startsWith("/cosmetics/assets/");
+					console.error(cosmetic ? "Cosmetic artwork failed to load" : "Map artwork failed to load", { url: image.currentSrc || image.src, page: location.pathname });
+					image.dataset.assetFallbackApplied = "true";
+					const placeholder = document.createElement("span");
+					placeholder.className = "asset-fallback-text";
+					placeholder.textContent = cosmetic ? "Preview unavailable" : "Artwork unavailable";
+					image.replaceWith(placeholder);
+				}
+			}, true);
+		})();</script><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg?v=3" sizes="any"><link rel="alternate icon" type="image/x-icon" href="../../../favicon.ico?v=3"><link rel="apple-touch-icon" href="../../../favicon.svg"><link rel="sitemap" type="application/xml" href="../../../sitemap.xml"><meta name="generator" content="Astro v6.0.8"><!-- Canonical URL --><link rel="canonical" href="https://mapverse.net/dashboard/map/the-sunken-temple"><!-- Primary Meta Tags --><title>The Sunken Temple - Dashboard - MapVerse</title><meta name="title" content="The Sunken Temple - Dashboard - MapVerse"><meta name="description" content="Manage The Sunken Temple, update versions, and review status from your MapVerse dashboard."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://mapverse.net/dashboard/map/the-sunken-temple"><meta property="og:title" content="The Sunken Temple - Dashboard - MapVerse"><meta property="og:description" content="Manage The Sunken Temple, update versions, and review status from your MapVerse dashboard."><meta property="og:image" content="https://mapverse.net/share-img.png"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://mapverse.net/dashboard/map/the-sunken-temple"><meta name="twitter:title" content="The Sunken Temple - Dashboard - MapVerse"><meta name="twitter:description" content="Manage The Sunken Temple, update versions, and review status from your MapVerse dashboard."><meta name="twitter:image" content="https://mapverse.net/share-img.png"><!-- Bootstrap --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"><script>
+	!function(t,e){var o,n,p,r;e.__SV||(window.posthog&&window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-source.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture identify reset get_distinct_id get_session_id".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+
+	posthog.init("phc_9POmpKcDK4fkRwqbbRJIhRzatg9N4xUsTYYH6HEIabx", {
+		api_host: "https://eu.i.posthog.com",
+		defaults: "2025-05-24",
+		person_profiles: "identified_only",
+	});
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-J4ESQQLNFY"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J4ESQQLNFY');
+</script><script>
+	!function(t,e){var o,n,p,r;e.__SV||(window.posthog&&window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture identify reset get_distinct_id get_session_id captureException".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+
+	posthog.init("phc_9POmpKcDK4fkRwqbbRJIhRzatg9N4xUsTYYH6HEIabx", {
+		api_host: "https://eu.i.posthog.com",
+		defaults: "2026-01-30",
+		person_profiles: "identified_only",
+	});
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-J4ESQQLNFY"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J4ESQQLNFY');
+</script><!-- wysimark --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@wysimark/wysimark/dist/wysimark.css"><link rel="stylesheet" href="../../../_astro/dashboard-mod.C-ZLEmh3.css">
+<link rel="stylesheet" href="../../../_astro/BaseLayout.DGGGtufy.css">
+<style>.sidebar[data-astro-cid-hbqfw4sq]{display:grid;gap:.5rem;color:var(--color-text-2)}h2[data-astro-cid-hbqfw4sq]{margin:0 0 .25rem;font-size:1.25rem}a[data-astro-cid-hbqfw4sq]{display:flex;align-items:center;gap:.65rem;padding:.7rem .8rem;border:1px solid var(--color-border);border-radius:var(--border-radius);color:inherit;text-decoration:none}a[data-astro-cid-hbqfw4sq]:hover,a[data-astro-cid-hbqfw4sq][aria-current]{background:#a6d85f21;border-color:var(--color-primary-main);color:var(--color-primary-main)}.admin-links[data-astro-cid-m5sbuhk6]{display:grid;gap:.5rem;margin-top:1rem;color:var(--color-text-2)}h2[data-astro-cid-m5sbuhk6]{margin:0 0 .25rem;font-size:1.25rem}a[data-astro-cid-m5sbuhk6]{display:flex;align-items:center;gap:.65rem;padding:.7rem .8rem;border:1px solid var(--color-border);border-radius:var(--border-radius);color:inherit;text-decoration:none}a[data-astro-cid-m5sbuhk6]:hover{background:#a6d85f21;border-color:var(--color-primary-main);color:var(--color-primary-main)}
+</style>
+<link rel="stylesheet" href="../../../_astro/_slug_@_@astro.eE8j40xD.css">
+<link rel="stylesheet" href="../../../_astro/ThumbnailUploader.CIJr3vDV.css">
+<style>.updates-layout[data-astro-cid-anflx7e4]{display:grid;gap:1rem;min-width:0}.section-heading[data-astro-cid-anflx7e4],.composer-footer[data-astro-cid-anflx7e4],.update-meta[data-astro-cid-anflx7e4],.update-foot[data-astro-cid-anflx7e4]{display:flex;justify-content:space-between;align-items:center;gap:.8rem;flex-wrap:wrap}.section-heading[data-astro-cid-anflx7e4] h2[data-astro-cid-anflx7e4],.update-card[data-astro-cid-anflx7e4] h3[data-astro-cid-anflx7e4],.update-composer[data-astro-cid-anflx7e4] h3[data-astro-cid-anflx7e4]{margin:0}.eyebrow[data-astro-cid-anflx7e4]{margin:0 0 .2rem;color:var(--color-primary-main);font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.count[data-astro-cid-anflx7e4],.type-pill[data-astro-cid-anflx7e4]{border-radius:999px;padding:.3rem .65rem;background:#ffffff14;font-size:.8rem;font-weight:700}.update-composer[data-astro-cid-anflx7e4],.update-card[data-astro-cid-anflx7e4],.empty-state[data-astro-cid-anflx7e4]{border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.1rem;background:#ffffff09}.update-composer[data-astro-cid-anflx7e4]{display:grid;gap:.8rem}.update-composer[data-astro-cid-anflx7e4] p[data-astro-cid-anflx7e4],.empty-state[data-astro-cid-anflx7e4] p[data-astro-cid-anflx7e4]{margin:0;opacity:.75}label[data-astro-cid-anflx7e4]{display:grid;gap:.35rem;font-size:.9rem;font-weight:650}input[data-astro-cid-anflx7e4],textarea[data-astro-cid-anflx7e4]{width:100%;box-sizing:border-box;border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:.7rem;background:#00000047;color:inherit;font:inherit}textarea[data-astro-cid-anflx7e4]{min-height:6rem;resize:vertical}.composer-footer[data-astro-cid-anflx7e4]{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end}.composer-footer[data-astro-cid-anflx7e4] label[data-astro-cid-anflx7e4]{min-width:0}.composer-footer[data-astro-cid-anflx7e4] button[data-astro-cid-anflx7e4]{min-height:2.75rem}button[data-astro-cid-anflx7e4]:not(.quiet-button){border:0;border-radius:8px;padding:.75rem 1rem;background:var(--color-primary-main);color:#18210e;font-weight:800;cursor:pointer}.update-list[data-astro-cid-anflx7e4]{display:grid;gap:.75rem}.update-card[data-astro-cid-anflx7e4]{display:grid;gap:.7rem}.update-meta[data-astro-cid-anflx7e4],.update-foot[data-astro-cid-anflx7e4]{font-size:.82rem;opacity:.8}.type-pill[data-astro-cid-anflx7e4]{background:#a6d85f2e;color:var(--color-primary-main)}.type-pill[data-astro-cid-anflx7e4].event{background:#80b1ff2b;color:#a9caff}.event-date[data-astro-cid-anflx7e4]{margin:0;color:#a9caff;font-weight:700}.event-actions[data-astro-cid-anflx7e4]{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem}.event-actions[data-astro-cid-anflx7e4] a[data-astro-cid-anflx7e4]{color:var(--color-primary-main);font-weight:700}.event-actions[data-astro-cid-anflx7e4] .reminder-button[data-astro-cid-anflx7e4]{padding:.5rem .7rem}.update-body[data-astro-cid-anflx7e4]{margin:0;white-space:pre-wrap;line-height:1.5;overflow-wrap:anywhere}.quiet-button[data-astro-cid-anflx7e4]{background:none;border:0;color:inherit;text-decoration:underline;cursor:pointer}.empty-state[data-astro-cid-anflx7e4]{text-align:center;padding:2rem 1rem;display:grid;justify-items:center;gap:.35rem}.empty-state[data-astro-cid-anflx7e4] span[data-astro-cid-anflx7e4]{font-size:1.5rem;color:var(--color-primary-main)}@media(max-width:600px){.composer-footer[data-astro-cid-anflx7e4]{grid-template-columns:1fr}.composer-footer[data-astro-cid-anflx7e4] button[data-astro-cid-anflx7e4]{width:100%}}button[data-astro-cid-anflx7e4]:not(.quiet-button){background:var(--r-pri)!important;color:#fff!important;text-shadow:2px 2px 0 #10300a;border:0!important;box-shadow:0 0 0 2px #000,inset 0 -6px 0 var(--r-pri-lo),inset 0 2px 0 var(--r-pri-hi)!important;padding:6px 16px 12px}button[data-astro-cid-anflx7e4]:not(.quiet-button):active{transform:translateY(4px);padding-bottom:8px}.type-pill[data-astro-cid-anflx7e4]{background:var(--r-sunk);color:var(--r-sel);box-shadow:inset 0 0 0 2px var(--r-edge)}
+</style></head> <body data-astro-cid-37fxchfa> <a class="skip-link" href="#main-content" data-astro-cid-37fxchfa>Skip to content</a> <script type="module">let g=0;function b(l,m={}){const{title:d="Confirm",confirmText:f="Confirm",cancelText:v="Cancel",variant:i="default"}=m;return new Promise(u=>{const n=t=>String(t??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;"),p=i==="danger"||i==="warning"?i:"default",o=document.activeElement,e=document.createElement("dialog"),a=`mv-confirm-title-${++g}`,r=`${a}-message`;e.className="mv-confirm-overlay",e.setAttribute("aria-labelledby",a),e.setAttribute("aria-describedby",r),e.innerHTML=`
+			<div class="mv-confirm-dialog">
+				<h2 id="${a}" class="mv-confirm-title">${n(d)}</h2>
+				<p id="${r}" class="mv-confirm-message">${n(l)}</p>
+				<div class="mv-confirm-actions">
+					<button type="button" class="mv-confirm-btn mv-confirm-cancel">${n(v)}</button>
+					<button type="button" class="mv-confirm-btn mv-confirm-ok ${p}">${n(f)}</button>
+				</div>
+			</div>
+		`;let s=!1;const c=t=>{s||(s=!0,e.classList.add("mv-confirm-closing"),setTimeout(()=>{e.close(),e.remove(),o instanceof HTMLElement&&o.isConnected&&o.focus(),u(t)},150))};e.addEventListener("click",t=>{t.target===e&&c(!1)}),e.querySelector(".mv-confirm-cancel").addEventListener("click",()=>c(!1)),e.querySelector(".mv-confirm-ok").addEventListener("click",()=>c(!0)),e.addEventListener("cancel",t=>{t.preventDefault(),c(!1)}),document.body.appendChild(e),e.showModal(),e.querySelector(".mv-confirm-cancel")?.focus()})}typeof window<"u"&&(window.mapverseConfirm=b);</script> <div class="page-progress-bar" id="page-progress-bar" data-astro-cid-37fxchfa></div> <header class="site-header is-authenticated" data-astro-cid-3ef6ksr2> <div class="header" data-astro-cid-3ef6ksr2> <div class="left-header" data-astro-cid-3ef6ksr2> <a href="../../../" class="logo-link" data-astro-cid-3ef6ksr2> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="Z1VauN" component-url="../../../_astro/index.DFgZ-_26.js" component-export="MapVerseLogo" renderer-url="../../../_astro/client.svelte.Tl7DXQbT.js" props="{&quot;size&quot;:[0,&quot;46&quot;],&quot;data-astro-cid-3ef6ksr2&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;MapVerseLogo&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="mapverse-logo svelte-rvzw0t" data-footer="false"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 210 210"><defs><linearGradient id="b"><stop offset="0" style="stop-color:#44387d;stop-opacity:1"></stop><stop offset=".5" style="stop-color:#000;stop-opacity:1"></stop><stop offset="1" style="stop-color:#44387d;stop-opacity:1"></stop></linearGradient><linearGradient id="a"><stop offset="0" style="stop-color:#a680ff;stop-opacity:1"></stop><stop offset="1" style="stop-color:#705ea9;stop-opacity:0"></stop></linearGradient><radialGradient id="d" cx="105" cy="105" r="86.174" fx="105" fy="105" gradientTransform="matrix(1 0 0 1.1547 0 -16.244)" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:#a680ff;stop-opacity:1"></stop><stop offset="1" style="stop-color:#705ea9;stop-opacity:0"></stop></radialGradient></defs><g transform="translate(-4.716 -4.716)scale(1.04491)"><path d="M21.576 56.835 105 105v96.33V105l83.424-48.165L105 105Zm166.848 96.33L105 201.33l-83.424-48.165v-96.33L105 8.67l83.424 48.165Z" style="fill:url(#d);stroke:#e2ff5e;stroke-width:7.2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"></path><path d="m20.105 90.542 6.562 3.837v5.823l8.416 4.922-.029 4.153 5.214 3.129v6.17l4.176 2.442v12.143l5.214 3.049v10.589l3.786 2.213v20.706l5.5 3.216v10.99l17.162 10.036 3.34-2.854-.092-16.653 4.48 2.62 5.778-3.38v-6.627l4.36-2.55V146.42l-22.96-13.425v-5.896l-10.441-6.106v-5.259l-5.525-3.271v-3.737l5.059-2.958V89.406l10.377-6.069v-6.243l-14.08-8.234v-8.814l-5.304-3.101v-5.422l-8.499-4.97v-6.206l-4.69-2.742-7.205 4.213.049 2.857-16.5 10.035v31.286l5.852 3.422zM65.912 47.566l14.463 7.714 4.852-2.802 4.678 2.702 4.735-2.734 9.653 5.574 4.425-2.555 4.45 2.57 10.107-5.836v-10.57l-14.971-8.644-4.602 2.657-4.504-2.6-3.694 2.133-9.489-5.479L65.902 41.31z" style="fill:#e2ff5e;fill-opacity:1;stroke:#000;stroke-width:0;"></path><path d="M81.426 19.428v-7.884l4.298-2.289 3.437 1.83 5.97-3.179 7.717 4.11-3.658-1.948 6.262-3.335 4.555 2.426 3.779-2.012L195.82 50.83v18.855l-3.382 1.8v3.416l3.593 1.913v35.25l-3.924 2.09-5.167 12.862-2.2.827-2.294 1.425.188 11.485-2.957 1.826v5.215L168.4 153.8l-8.935-4.758v-17.547l-4.996 2.66-6.758-3.599v-4.407l-4.875 2.596-9.934-5.29V107.11l6.948-3.7v-5.82l5.076-2.703v-11.28l14.294-7.346-5.197 3.649.347-7.802 3.61-.39v0l22.289-11.87-6.261-3.333-6.637 3.534-12.976-6.91v-5.883l-4.615-2.457v-4.845l-5.048 2.688-10.322-5.496v-5.798l-13.874-7.388-5.954 3.17-24.835-13.225zM116.48 148.102v17.078l15.128 8.734 6.067-3.503v-6.832l4.199-2.424v-6.649l-5.175-2.988v-5.284l-9.84-5.68-10.423 6.017zM14.73 146.06v13.11l10.84 6.003 4.347-2.97v-5.244l3.009-2.056v-7.464l-9.733-5.785v0l-8.495 3.233z" style="fill:#e2ff5e;fill-opacity:1;stroke:#000;stroke-width:0;"></path></g></svg> <!--[0--><span class="logo-text svelte-rvzw0t">MapVerse</span><!--]--></div><!--]--><!--astro:end--></astro-island> </a> </div> <div class="center-header" data-astro-cid-3ef6ksr2> <button class="mobile-nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu" data-astro-cid-3ef6ksr2> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" data-astro-cid-3ef6ksr2> <path d="M4 6h16M4 12h16M4 18h16" data-astro-cid-3ef6ksr2></path> </svg> <span data-astro-cid-3ef6ksr2>Menu</span> </button> <nav id="primary-navigation" class="site-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <span class="mobile-nav-heading" data-astro-cid-3ef6ksr2>Explore MapVerse</span> <a href="../../../" class="nav-link" data-astro-cid-3ef6ksr2> Home </a><a href="../../../discover/" class="nav-link" data-astro-cid-3ef6ksr2> Browse Maps </a><a href="../../../cosmetics/" class="nav-link" data-astro-cid-3ef6ksr2> Cosmetics </a><a href="../../../mod/" class="nav-link" data-astro-cid-3ef6ksr2> Mod </a> </nav> </div> <div class="right-header" data-astro-cid-3ef6ksr2> <a class="token-balance-link" href="../../../tokens/" aria-label="2,350 Tokens. Open wallet" data-astro-cid-3ef6ksr2>✦ 2,350 Tokens</a> <a class="upload-map-link" href="../../../maps/create/" aria-label="Upload map" title="Upload map" data-astro-cid-3ef6ksr2><i class="bi bi-plus-lg" aria-hidden="true" data-astro-cid-3ef6ksr2></i><span data-astro-cid-3ef6ksr2>Upload map</span></a> <div class="notification-menu" data-token="mock-session-token" data-api="http://localhost:5001" data-astro-cid-3ef6ksr2> <!--[--><!--[-1--><button type="button" aria-label="Notifications" class="btn v-secondary notification-bell-btn svelte-1vp8136" aria-controls="notif-dropdown" aria-expanded="false" data-astro-cid-3ef6ksr2="true"><div class="pixel-box btn-inner svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0--> <i class="bi bi-bell-fill" data-astro-cid-3ef6ksr2></i> <span class="notification-badge" id="notif-badge" style="display: none;" data-astro-cid-3ef6ksr2>0</span> <!----><!--]--><!----></div><!----></button><!--]--><!--]--> <div class="notification-dropdown" id="notif-dropdown" data-astro-cid-3ef6ksr2> <div class="notif-dropdown-header" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>Notifications</span> <a href="../../../dashboard/notifications/" class="notif-view-all" data-astro-cid-3ef6ksr2>View all</a> </div> <div class="notif-dropdown-list" id="notif-dropdown-list" data-astro-cid-3ef6ksr2> <div class="notif-empty" data-astro-cid-3ef6ksr2>No new notifications</div> </div> </div> </div> <div class="profile-menu" data-astro-cid-3ef6ksr2> <button class="profile-button" aria-label="Open profile menu" aria-controls="profile-navigation" aria-expanded="false" type="button" data-astro-cid-3ef6ksr2> <img src="../../../_api/cdn/profile/avatar-1.png" alt="User Avatar" class="avatar" data-astro-cid-3ef6ksr2> </button> <div class="profile-dropdown" id="profile-navigation" data-astro-cid-3ef6ksr2> <div class="profile-dropdown-heading" data-astro-cid-3ef6ksr2> <strong data-astro-cid-3ef6ksr2>BlockSmith</strong> <span data-astro-cid-3ef6ksr2>Your account</span> </div> <span class="profile-dropdown-label" data-astro-cid-3ef6ksr2>Your MapVerse</span> <a href="../../../dashboard/" data-astro-cid-3ef6ksr2>Dashboard</a> <a href="../../../dashboard/#my-library" data-astro-cid-3ef6ksr2>My library</a> <a href="../../../dashboard/maps/" data-astro-cid-3ef6ksr2>My maps</a> <a href="../../../tokens/" data-astro-cid-3ef6ksr2>Token wallet</a> <span class="profile-dropdown-label" data-astro-cid-3ef6ksr2>Community</span> <a href="https://discord.gg/xFgTJtebgp" target="_blank" data-astro-cid-3ef6ksr2>Discord</a> <a href="https://blog.mapverse.net" target="_blank" data-astro-cid-3ef6ksr2>Blog</a> <a href="../../../logout" class="profile-logout" data-astro-cid-3ef6ksr2>Logout</a>  </div> </div> </div> </div> <div class="global-search-row" data-astro-cid-3ef6ksr2><form class="header-search" role="search" action="../../../search/" method="get" data-astro-cid-6gzi6o6l>  <div class="search-field" data-astro-cid-6gzi6o6l> <i class="bi bi-search" aria-hidden="true" data-astro-cid-6gzi6o6l></i> <input id="global-search" name="q" type="search" value placeholder="Search maps or players…" aria-label="Search maps or players" aria-controls="global-search-suggestions" aria-expanded="false" autocomplete="off" maxlength="200" required data-astro-cid-6gzi6o6l> <button type="submit" data-astro-cid-6gzi6o6l>Search <span aria-hidden="true" data-astro-cid-6gzi6o6l>→</span></button> </div> <div id="global-search-suggestions" class="search-suggestions" aria-label="Search suggestions" hidden data-astro-cid-6gzi6o6l></div> <span class="search-status" role="status" aria-live="polite" data-astro-cid-6gzi6o6l></span> </form> <script type="module">function R(l){const e=l.querySelector('input[name="q"]'),s=l.querySelector(".search-suggestions"),g=l.querySelector(".search-status");let b,E,y=0,x="",A="",w=!1,v=!1;const $=()=>[...s.querySelectorAll("a")];function p(){clearTimeout(b),E?.abort(),y++,s.hidden=!0,e.setAttribute("aria-expanded","false"),g.textContent=""}function L(){w||!e.value.trim()||!s.hidden||(e.value.trim()===x&&s.children.length?(s.hidden=!1,e.setAttribute("aria-expanded","true"),g.textContent=A):e.dispatchEvent(new Event("input")))}e.addEventListener("focus",L),e.addEventListener("click",L);function S(t,n,i,a){const c=document.createElement("a");c.href=n;const m=document.createElement("span");if(m.textContent=t,c.append(m),i){const h=document.createElement("small");h.textContent=i,c.append(h);const d=document.createElement("span");if(d.className=`suggestion-preview ${i==="Player"?"player-preview-image":""}`,d.setAttribute("aria-hidden","true"),d.textContent=t.charAt(0).toUpperCase(),a){const r=document.createElement("img");r.src=a,r.alt="",r.loading="lazy",r.decoding="async",r.addEventListener("error",()=>{r.hidden=!0}),d.append(r)}c.append(d)}return s.append(c),c}e.addEventListener("input",t=>{if(p(),t.isComposing)return;const n=e.value.trim();if(s.replaceChildren(),!n)return;const i=y;b=setTimeout(async()=>{E=new AbortController;const a=E.signal;g.textContent="Searching…";const c=async f=>{const u=await fetch(f,{signal:a});if(!u.ok)throw new Error("Search unavailable");const o=await u.json();if(!Array.isArray(o))throw new Error("Invalid search response");return o},m=encodeURIComponent(n),[h,d]=await Promise.allSettled([c(`/api/maps/suggestions?q=${m}`),c(`/api/users/search?q=${m}`)]);if(a.aborted||i!==y||e.value.trim()!==n)return;s.replaceChildren();let r=0;for(const[f,u]of[[h,"Map"],[d,"Player"]])if(f.status==="fulfilled")for(const o of f.value.slice(0,u==="Map"?5:3)){if(!o||typeof o.slug!="string")continue;const q=u==="Map"?o.title:o.username;if(typeof q!="string")continue;const k=u==="Map"?typeof o.thumbnails=="string"?o.thumbnails.split(",")[0].trim():"":typeof o.profile_pic=="string"?o.profile_pic:"",M=k?`/cdn/${u==="Map"?"thumb":"profile"}/${encodeURIComponent(k)}`:void 0;S(q,`/${u==="Map"?"map":"user"}/${encodeURIComponent(o.slug)}`,u,M),r++}const C=h.status==="rejected"||d.status==="rejected";if(!r||C){const f=document.createElement("p");f.textContent=C?"Some suggestions are unavailable. Try the full search.":"No suggestions found. Try another map or player name.",s.append(f)}S(`See all results for “${n}”`,`/search?q=${m}`).className="suggestion-more",s.hidden=!1,e.setAttribute("aria-expanded","true"),g.textContent=r?`${r} suggestions available.`:C?"Suggestions unavailable.":"No suggestions found.",x=n,A=g.textContent},200)}),e.addEventListener("compositionend",()=>e.dispatchEvent(new Event("input"))),l.addEventListener("submit",t=>{e.value=e.value.trim(),e.value||(t.preventDefault(),e.focus()),p()}),l.addEventListener("keydown",t=>{if(t.isComposing)return;if(t.key==="Escape"){p(),w=!0,e.focus(),w=!1;return}if(s.hidden||!["ArrowDown","ArrowUp"].includes(t.key))return;const n=$();if(!n.length)return;t.preventDefault();const i=n.indexOf(document.activeElement),a=t.key==="ArrowDown"?i+1:i<0?n.length-1:i-1;a<0||a>=n.length?e.focus():n[a].focus()}),s.addEventListener("pointerdown",()=>{v=!0}),document.addEventListener("pointerup",()=>{setTimeout(()=>{v=!1},0)}),document.addEventListener("pointercancel",()=>{v=!1}),l.addEventListener("focusout",()=>{queueMicrotask(()=>{!v&&!l.contains(document.activeElement)&&p()})}),document.addEventListener("click",t=>{l.contains(t.target)||p()}),window.addEventListener("pagehide",p)}document.querySelectorAll(".header-search").forEach(R);</script></div> </header>  <script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const header = document.querySelector('.center-header');
+		const toggle = document.querySelector('.mobile-nav-toggle');
+		const nav = document.getElementById('primary-navigation');
+		const profile = document.querySelector('.profile-menu');
+		const profileButton = document.querySelector('.profile-button');
+		const notifications = document.querySelector('.notification-menu');
+		const notificationButton = document.querySelector('.notification-bell-btn');
+		if (!header || !toggle || !nav || !profile || !profileButton) return;
+
+		function closeMenu() {
+			header.classList.remove('is-open');
+			toggle.setAttribute('aria-expanded', 'false');
+			toggle.setAttribute('aria-label', 'Open navigation menu');
+		}
+
+		function closeProfile() {
+			profile.classList.remove('is-open');
+			profileButton.setAttribute('aria-expanded', 'false');
+			profileButton.setAttribute('aria-label', 'Open profile menu');
+		}
+		function closeNotifications() {
+			notifications?.classList.remove('is-open');
+			notificationButton?.setAttribute('aria-expanded', 'false');
+		}
+		notificationButton?.addEventListener('click', function () {
+			closeMenu();
+			closeProfile();
+			const opening = !notifications.classList.contains('is-open');
+			notifications.classList.toggle('is-open', opening);
+			notificationButton.setAttribute('aria-expanded', String(opening));
+		});
+
+		toggle.addEventListener('click', function () {
+			closeNotifications();
+			closeProfile();
+			const opening = !header.classList.contains('is-open');
+			header.classList.toggle('is-open', opening);
+			toggle.setAttribute('aria-expanded', String(opening));
+			toggle.setAttribute('aria-label', opening ? 'Close navigation menu' : 'Open navigation menu');
+		});
+		profileButton.addEventListener('click', function () {
+			closeNotifications();
+			closeMenu();
+			const opening = !profile.classList.contains('is-open');
+			profile.classList.toggle('is-open', opening);
+			profileButton.setAttribute('aria-expanded', String(opening));
+			profileButton.setAttribute('aria-label', opening ? 'Close profile menu' : 'Open profile menu');
+		});
+
+		document.addEventListener('click', function (event) {
+			if (!header.contains(event.target)) closeMenu();
+			if (!profile.contains(event.target)) closeProfile();
+			if (!notifications?.contains(event.target)) closeNotifications();
+		});
+		document.addEventListener('keydown', function (event) {
+			if (event.key === 'Escape') {
+				if (header.classList.contains('is-open')) toggle.focus();
+				if (notifications?.classList.contains('is-open')) notificationButton?.focus();
+				if (profile.classList.contains('is-open')) profileButton.focus();
+				closeMenu();
+				closeProfile();
+				closeNotifications();
+			}
+		});
+		nav.querySelectorAll('a').forEach(function (link) {
+			link.addEventListener('click', closeMenu);
+		});
+		window.addEventListener('resize', function () {
+			if (window.innerWidth > 1050) closeMenu();
+		});
+	});
+</script> <script>(function(){const backendUrl = "http://localhost:5001";
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Tags scroll
+    var nav = document.querySelector('.tags');
+    var leftBtn = document.querySelector('.tags-scroll-left');
+    var rightBtn = document.querySelector('.tags-scroll-right');
+    if (nav && leftBtn && rightBtn) {
+      var scrollAmount = 200;
+      function updateButtons() {
+        leftBtn.classList.toggle('visible', nav.scrollLeft > 0);
+        rightBtn.classList.toggle('visible', nav.scrollLeft < nav.scrollWidth - nav.clientWidth - 1);
+      }
+      leftBtn.addEventListener('click', function() { nav.scrollLeft -= scrollAmount; });
+      rightBtn.addEventListener('click', function() { nav.scrollLeft += scrollAmount; });
+      nav.addEventListener('scroll', updateButtons);
+      window.addEventListener('resize', updateButtons);
+      updateButtons();
+    }
+
+    // Notification system
+    var badge = document.getElementById('notif-badge');
+    var dropdownList = document.getElementById('notif-dropdown-list');
+    var notifMenu = document.querySelector('.notification-menu');
+    var token = notifMenu ? notifMenu.getAttribute('data-token') : '';
+    var apiBase = notifMenu ? (notifMenu.getAttribute('data-api') || '') : (backendUrl || '');
+
+    if (!badge || !token || !dropdownList) return;
+
+    function getFriendIcon(n) {
+      return n.type === 'warning' ? 'bi-exclamation-triangle-fill' : n.type === 'success' ? 'bi-check-circle-fill' : n.type === 'announcement' ? 'bi-megaphone-fill' : 'bi-info-circle-fill';
+    }
+    function getFriendColor(n) {
+      return n.type === 'warning' ? '#f59e0b' : n.type === 'success' ? '#10b981' : n.type === 'announcement' ? '#8b5cf6' : '#3b82f6';
+    }
+
+    // Notification titles/messages and usernames are attacker-controlled: a
+    // profile comment is echoed verbatim into notification.message. Anything
+    // interpolated into innerHTML below must go through this first, or a
+    // crafted comment executes script in the recipient's session (and the JWT
+    // is readable from this element's data-token attribute).
+    function escapeHtml(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    // Combined fetch: notifications + friend requests
+    Promise.all([
+      fetch(apiBase + '/api/notifications/unread-count', { headers: { 'Authorization': 'Bearer ' + token } }).then(function(r) { return r.json().catch(function() { return {}; }); }),
+      fetch(apiBase + '/api/notifications?page=1&per_page=10', { headers: { 'Authorization': 'Bearer ' + token } }).then(function(r) { return r.json().catch(function() { return {}; }); }),
+      fetch(apiBase + '/api/users/me/friends/pending', { headers: { 'Authorization': 'Bearer ' + token } }).then(function(r) { return r.json().catch(function() { return []; }); })
+    ]).then(function(results) {
+      var unreadData = results[0];
+      var notifData = results[1];
+      var pendingFriends = results[2];
+
+      var unreadNotifs = unreadData.unread_count || 0;
+      var totalBadge = unreadNotifs + (Array.isArray(pendingFriends) ? pendingFriends.length : 0);
+
+      if (totalBadge > 0) {
+        badge.textContent = totalBadge > 99 ? '99+' : String(totalBadge);
+        badge.style.display = 'flex';
+      } else {
+        badge.style.display = 'none';
+      }
+
+      dropdownList.innerHTML = '';
+      var hasContent = false;
+
+      // Render pending friend requests first
+      if (Array.isArray(pendingFriends) && pendingFriends.length > 0) {
+        pendingFriends.forEach(function(req) {
+          var u = req.user;
+          var item = document.createElement('div');
+          item.className = 'notif-dropdown-item unread friend-request-item';
+          item.setAttribute('data-friend-id', req.id);
+          item.innerHTML =
+            '<span class="notif-icon" style="color:#f59e0b"><i class="bi bi-person-plus-fill"></i></span>' +
+            '<div class="notif-body">' +
+              '<p class="notif-title">Friend Request</p>' +
+              '<p class="notif-msg"><strong>' + escapeHtml(u.username) + '</strong> wants to be your friend</p>' +
+              '<span class="notif-time">Lv.' + Number(u.level || 1) + '</span>' +
+            '</div>' +
+            '<div class="friend-actions">' +
+              '<button class="friend-accept-btn" title="Accept"><i class="bi bi-check-lg"></i></button>' +
+              '<button class="friend-decline-btn" title="Decline"><i class="bi bi-x-lg"></i></button>' +
+            '</div>';
+          dropdownList.appendChild(item);
+
+          // Wire accept button
+          item.querySelector('.friend-accept-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            fetch(apiBase + '/api/users/me/friends/' + req.id + '/accept', {
+              method: 'PUT',
+              headers: { 'Authorization': 'Bearer ' + token }
+            }).then(function(r) {
+              if (r.ok) {
+                item.remove();
+                updateBadge();
+                recheckEmpty();
+                if (window.showToast) window.showToast('Friend request accepted!', 'success', 'bi-person-check', 3000);
+              }
+            }).catch(function() {
+              if (window.showToast) window.showToast('Failed to accept request', 'error', 'bi-exclamation-circle', 3000);
+            });
+          });
+
+          // Wire decline button
+          item.querySelector('.friend-decline-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            fetch(apiBase + '/api/users/me/friends/' + req.id + '/decline', {
+              method: 'PUT',
+              headers: { 'Authorization': 'Bearer ' + token }
+            }).then(function(r) {
+              if (r.ok) {
+                item.remove();
+                updateBadge();
+                recheckEmpty();
+              }
+            }).catch(function() {
+              if (window.showToast) window.showToast('Failed to decline request', 'error', 'bi-exclamation-circle', 3000);
+            });
+          });
+        });
+        hasContent = true;
+      }
+
+      // Render unread notifications
+      if (notifData.notifications) {
+        var unread = notifData.notifications.filter(function(n) { return !n.is_read; });
+        unread.slice(0, 5).forEach(function(n) {
+          var destination = typeof n.link === 'string' && n.link.startsWith('/') && !n.link.startsWith('//') && !n.link.includes('\\') ? n.link : '/notifications';
+          var item = document.createElement('a');
+          item.href = destination;
+          item.setAttribute('aria-label', 'Open notification: ' + n.title);
+          item.className = 'notif-dropdown-item' + (n.is_read ? '' : ' unread');
+          item.innerHTML =
+            '<span class="notif-icon" style="color:' + getFriendColor(n) + '"><i class="bi ' + getFriendIcon(n) + '"></i></span>' +
+            '<div class="notif-body">' +
+              '<p class="notif-title">' + escapeHtml(n.title) + '</p>' +
+              '<p class="notif-msg">' + escapeHtml(n.message) + '</p>' +
+              (n.created_at ? '<span class="notif-time">' + new Date(n.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + '</span>' : '') +
+            '</div>';
+          item.addEventListener('click', function(event) {
+            event.preventDefault();
+            var done = false;
+            function openNotification() { if (!done) { done = true; window.location.assign(destination); } }
+            var fallback = setTimeout(openNotification, 900);
+            fetch(apiBase + '/api/notifications/' + n.id + '/read', { method: 'POST', headers: { 'Authorization': 'Bearer ' + token } })
+              .catch(function() {}).finally(function() { clearTimeout(fallback); openNotification(); });
+          });
+          dropdownList.appendChild(item);
+        });
+        if (unread.length > 0) hasContent = true;
+      }
+
+      if (!hasContent) {
+        dropdownList.innerHTML = '<div class="notif-empty">No new notifications</div>';
+      }
+
+      function recheckEmpty() {
+        if (dropdownList.children.length === 0) {
+          dropdownList.innerHTML = '<div class="notif-empty">No new notifications</div>';
+        }
+      }
+    }).catch(function() {});
+
+    function updateBadge() {
+      fetch(apiBase + '/api/notifications/unread-count', { headers: { 'Authorization': 'Bearer ' + token } })
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          fetch(apiBase + '/api/users/me/friends/pending', { headers: { 'Authorization': 'Bearer ' + token } })
+            .then(function(r) { return r.json(); })
+            .then(function(pending) {
+              var total = (d.unread_count || 0) + (Array.isArray(pending) ? pending.length : 0);
+              if (total > 0) {
+                badge.textContent = total > 99 ? '99+' : String(total);
+                badge.style.display = 'flex';
+              } else {
+                badge.style.display = 'none';
+              }
+            });
+        });
+    }
+  });
+})();</script> <main class="page-content" id="main-content" tabindex="-1" data-astro-cid-37fxchfa>  <section class="dashboard-page" data-astro-cid-bk6kidus> <div class="dashboard-layout" data-astro-cid-bk6kidus> <div class="dashboard-main" data-astro-cid-bk6kidus> <script type="module">document.addEventListener("DOMContentLoaded",()=>{const d=document.querySelectorAll(".tag-selector__grid");for(const c of d){const r=Number(c.getAttribute("data-max-selected")??"5"),t=Array.from(c.querySelectorAll('input[type="checkbox"]')),o=()=>{const s=t.filter(e=>e.checked).length>=r;for(const e of t)e.disabled=s&&!e.checked};for(const n of t)n.addEventListener("change",o);o()}});</script><script type="module">function e(){const n=window.innerWidth<900;document.querySelectorAll("#visibility option[data-short]").forEach(t=>{t.textContent=(n?t.dataset.short:t.dataset.long)??null})}e();window.addEventListener("resize",e);</script><!--[--><div class="pixel-box card manage-card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-bk6kidus="true"><!--[0--> <div class="manage-content" data-astro-cid-bk6kidus>  <div class="title-row" data-astro-cid-erzlhegp> <h1 data-astro-cid-erzlhegp>The Sunken Temple</h1> <div class="title-actions" data-astro-cid-erzlhegp>   <!--[--><!--[0--><a href="../../../map/the-sunken-temple/" class="btn v-secondary  svelte-zq1vjl" size="sm" data-astro-cid-erzlhegp="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->View<!----><!--]--><!----></div><!----></a><!--]--><!--]--> </div> </div> <nav class="manage-tabs" aria-label="Manage map tabs" data-astro-cid-aqumtlsk> <!--[--><!--[-1--><button type="button" class="btn v-ghost manage-tab-button tab-analytics is-active svelte-zq1vjl" data-tab-url="http://localhost:4330/dashboard/map/the-sunken-temple?tab=analytics" aria-pressed="true" data-tab-button="true" data-tab="analytics" data-astro-cid-aqumtlsk="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->Analytics<!----><!--]--><!----></div><!----></button><!--]--><!--]--><!--[--><!--[-1--><button type="button" class="btn v-ghost manage-tab-button tab-versions svelte-zq1vjl" data-tab-url="http://localhost:4330/dashboard/map/the-sunken-temple?tab=versions" aria-pressed="false" data-tab-button="true" data-tab="versions" data-astro-cid-aqumtlsk="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->Versions<!----><!--]--><!----></div><!----></button><!--]--><!--]--><!--[--><!--[-1--><button type="button" class="btn v-ghost manage-tab-button tab-edit svelte-zq1vjl" data-tab-url="http://localhost:4330/dashboard/map/the-sunken-temple?tab=edit" aria-pressed="false" data-tab-button="true" data-tab="edit" data-astro-cid-aqumtlsk="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->Edit<!----><!--]--><!----></div><!----></button><!--]--><!--]--><!--[--><!--[-1--><button type="button" class="btn v-ghost manage-tab-button tab-achievements svelte-zq1vjl" data-tab-url="http://localhost:4330/dashboard/map/the-sunken-temple?tab=achievements" aria-pressed="false" data-tab-button="true" data-tab="achievements" data-astro-cid-aqumtlsk="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->Achievements<!----><!--]--><!----></div><!----></button><!--]--><!--]--><!--[--><!--[-1--><button type="button" class="btn v-ghost manage-tab-button tab-updates svelte-zq1vjl" data-tab-url="http://localhost:4330/dashboard/map/the-sunken-temple?tab=updates" aria-pressed="false" data-tab-button="true" data-tab="updates" data-astro-cid-aqumtlsk="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->Updates &amp; events<!----><!--]--><!----></div><!----></button><!--]--><!--]--><!--[--><!--[-1--><button type="button" class="btn v-ghost manage-tab-button tab-team svelte-zq1vjl" data-tab-url="http://localhost:4330/dashboard/map/the-sunken-temple?tab=team" aria-pressed="false" data-tab-button="true" data-tab="team" data-astro-cid-aqumtlsk="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->Team<!----><!--]--><!----></div><!----></button><!--]--><!--]--><!--[--><!--[-1--><button type="button" class="btn v-ghost manage-tab-button tab-delete svelte-zq1vjl" data-tab-url="http://localhost:4330/dashboard/map/the-sunken-temple?tab=delete" aria-pressed="false" data-tab-button="true" data-tab="delete" data-astro-cid-aqumtlsk="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->Delete<!----><!--]--><!----></div><!----></button><!--]--><!--]--> </nav> <script>(function(){const tabs = [{"key":"analytics","label":"Analytics"},{"key":"versions","label":"Versions"},{"key":"edit","label":"Edit"},{"key":"achievements","label":"Achievements"},{"key":"updates","label":"Updates & events"},{"key":"team","label":"Team"},{"key":"reports","label":"Reports"},{"key":"admin-comments","label":"Admin Comments"},{"key":"delete","label":"Delete","variant":"destructive"}];
+
+	const colorSchemes = {
+		active: {
+			main: "var(--color-primary-main)",
+			light: "var(--color-primary-light)",
+			dark: "var(--color-primary-dark)",
+			text: "var(--color-text-1)",
+		},
+		destructive: {
+			main: "var(--color-danger-main)",
+			light: "var(--color-danger-light)",
+			dark: "var(--color-danger-dark)",
+			text: "white",
+		},
+		inactive: {
+			main: "var(--color-secondary-main)",
+			light: "var(--color-secondary-light)",
+			dark: "var(--color-secondary-dark)",
+			text: "var(--color-text-2)",
+		},
+	};
+
+	// Function to update button styles based on activeTab
+	function updateButtonStyles(activeTab) {
+		const tabButtons = document.querySelectorAll('[data-tab-button]');
+		tabButtons.forEach(button => {
+			const tabKey = button.getAttribute('data-tab');
+			const isActive = tabKey === activeTab;
+			const tabData = tabs.find(t => t.key === tabKey);
+			
+			// Determine variant
+			const variant = isActive
+				? (tabData?.variant === "destructive" ? "destructive" : "active")
+				: (tabData?.variant ?? "inactive");
+			
+			// Update pixel box colors
+			const pixelBox = button.querySelector('.pixel-box');
+			if (pixelBox) {
+				const scheme = colorSchemes[variant] || colorSchemes.ghost;
+				pixelBox.style.setProperty('--pb-bg', scheme.main);
+				pixelBox.style.setProperty('--pb-light', scheme.light);
+				pixelBox.style.setProperty('--pb-dark', scheme.dark);
+				pixelBox.style.color = scheme.text;
+			}
+			
+			// Update classes
+			button.classList.toggle('is-active', isActive);
+			button.setAttribute('aria-pressed', String(isActive));
+		});
+	}
+
+	// Get current tab from URL
+	function getCurrentTab() {
+		const urlParams = new URLSearchParams(window.location.search);
+		const requested = urlParams.get('tab');
+		return [...document.querySelectorAll('[data-tab-button]')].some(button => button.dataset.tab === requested) ? requested : 'analytics';
+	}
+
+	// Set up event listeners
+	document.addEventListener('DOMContentLoaded', () => {
+		const tabButtons = document.querySelectorAll('[data-tab-button]');
+		let currentTab = getCurrentTab();
+		updateButtonStyles(currentTab);
+
+		tabButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				const tabKey = button.getAttribute('data-tab');
+				if (!tabKey || tabKey === currentTab) return;
+
+				currentTab = tabKey;
+				
+				// Update URL without reload
+				const newUrl = new URL(window.location);
+				newUrl.searchParams.set('tab', tabKey);
+				history.pushState(null, '', newUrl.toString());
+				
+				// Update button styles
+				updateButtonStyles(currentTab);
+				
+				// Dispatch event
+				window.dispatchEvent(new CustomEvent('tabChange', {
+					detail: { activeTab: tabKey }
+				}));
+			});
+		});
+
+		// Handle browser back/forward
+		window.addEventListener('popstate', () => {
+			currentTab = getCurrentTab();
+			updateButtonStyles(currentTab);
+			window.dispatchEvent(new CustomEvent('tabChange', {
+				detail: { activeTab: currentTab }
+			}));
+		});
+	});
+})();</script> <div class="tab-panels" data-astro-cid-bk6kidus> <section class="tab-panel is-active" data-tab-panel="analytics" data-astro-cid-gqpx5okl> <div class="stats-grid" data-astro-cid-bbx4bnee> <!--[--><div class="pixel-box card stat-card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-bbx4bnee="true"><!--[0--> <div class="stat-title" data-astro-cid-bbx4bnee>Plays</div> <div class="stat-value" data-astro-cid-bbx4bnee>23580</div> <!----><!--]--><!----></div><!--]--><!--[--><div class="pixel-box card stat-card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-bbx4bnee="true"><!--[0--> <div class="stat-title" data-astro-cid-bbx4bnee>Unique Players</div> <div class="stat-value" data-astro-cid-bbx4bnee>14620</div> <!----><!--]--><!----></div><!--]--><!--[--><div class="pixel-box card stat-card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-bbx4bnee="true"><!--[0--> <div class="stat-title" data-astro-cid-bbx4bnee>Online Players</div> <div class="stat-value" data-astro-cid-bbx4bnee>0</div> <!----><!--]--><!----></div><!--]--><!--[--><div class="pixel-box card stat-card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-bbx4bnee="true"><!--[0--> <div class="stat-title" data-astro-cid-bbx4bnee>Active Servers</div> <div class="stat-value" data-astro-cid-bbx4bnee>0</div> <!----><!--]--><!----></div><!--]--> </div> <!--[--><div class="pixel-box card chart-card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-lwb3q7x6="true"><!--[0--> <div class="chart-header" data-astro-cid-lwb3q7x6> <select class="range-select" id="range-102" data-astro-cid-lwb3q7x6> <option value="forever" data-astro-cid-lwb3q7x6>Forever</option> <option value="year" data-astro-cid-lwb3q7x6>Last Year</option> <option value="month" data-astro-cid-lwb3q7x6>Last Month</option> <option value="week" data-astro-cid-lwb3q7x6>Last Week</option> <option value="day" data-astro-cid-lwb3q7x6>Last Day</option> </select> </div> <div class="chart-body" data-astro-cid-lwb3q7x6> <canvas id="play-chart-102" data-astro-cid-lwb3q7x6></canvas> </div> <p class="no-data" id="play-chart-empty-102" hidden data-astro-cid-lwb3q7x6>0 plays and 0 unique players in this period.</p> <!----><!--]--><!----></div><!--]-->  <script>(function(){const mapId = 102;
+const mapSlug = "the-sunken-temple";
+
+	function initChart() {
+		const canvas = document.getElementById(`play-chart-${mapId}`);
+		const rangeSelect = document.getElementById(`range-${mapId}`);
+
+		if (!(canvas instanceof HTMLCanvasElement) || !(rangeSelect instanceof HTMLSelectElement)) {
+			return;
+		}
+		if (canvas.dataset.chartInitialized === "true") return;
+
+		const ctx = canvas.getContext("2d");
+
+		if (!ctx) {
+			return;
+		}
+
+		if (!window.Chart) {
+			return;
+		}
+		canvas.dataset.chartInitialized = "true";
+		const emptyMessage = document.getElementById(`play-chart-empty-${mapId}`);
+
+		let chart;
+		let latestRequest = 0;
+
+		async function updateChart(range = "forever") {
+			const requestId = ++latestRequest;
+			const response = await fetch(`/api/maps/${mapSlug}/analytics`);
+
+			if (!response.ok) {
+				console.error("analytics request failed", response.status);
+				return;
+			}
+
+			const data = await response.json();
+			if (requestId !== latestRequest) return;
+
+			if (!Array.isArray(data)) {
+				console.error("analytics data is not an array", data);
+				return;
+			}
+
+			const now = new Date();
+			const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+			const dayKey = (date) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+			const validEvents = data.filter((item) => item.timestamp).map((item) => ({ item, date: new Date(item.timestamp) }))
+				.filter(({ date }) => !Number.isNaN(date.getTime()));
+			let labels;
+			if (range === "day") {
+				labels = Array.from({ length: 24 }, (_, hour) => `${String(hour).padStart(2, "0")}:00`);
+			} else {
+				const days = range === "week" ? 7 : range === "month" ? 30 : range === "year" ? 365 : 30;
+				const start = new Date(today);
+				start.setDate(start.getDate() - days + 1);
+				const eventsThroughToday = validEvents.filter(({ date }) => date < new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1));
+				if (range === "forever" && eventsThroughToday.length) {
+					const earliest = eventsThroughToday.reduce((first, { date }) => date < first ? date : first, eventsThroughToday[0].date);
+					start.setFullYear(earliest.getFullYear(), earliest.getMonth(), earliest.getDate());
+				}
+				labels = [];
+				for (const date = new Date(start); date <= today; date.setDate(date.getDate() + 1)) {
+					labels.push(dayKey(date));
+				}
+			}
+
+			const totalCounts = new Map(labels.map((label) => [label, 0]));
+			const seen = new Map(labels.map((label) => [label, new Set()]));
+			for (const { item, date } of validEvents) {
+				const key = range === "day" ? `${String(date.getHours()).padStart(2, "0")}:00` : dayKey(date);
+				if (!totalCounts.has(key) || (range === "day" && dayKey(date) !== dayKey(today))) continue;
+				totalCounts.set(key, totalCounts.get(key) + 1);
+				if (item.mc_uuid) seen.get(key).add(item.mc_uuid);
+			}
+			const totalValues = labels.map((label) => totalCounts.get(label));
+			const uniqueValues = labels.map((label) => seen.get(label).size);
+			const hasPlays = totalValues.some((count) => count > 0);
+			if (emptyMessage) emptyMessage.hidden = hasPlays;
+
+			if (chart) {
+				chart.destroy();
+			}
+
+			chart = new window.Chart(ctx, {
+				type: "line",
+				data: {
+					labels,
+					datasets: [
+						{
+							label: "Total Plays",
+							data: totalValues,
+							fill: false,
+							borderColor: "rgb(75, 192, 192)",
+							tension: 0.1,
+						},
+						{
+							label: "Unique Players",
+							data: uniqueValues,
+							fill: false,
+							borderColor: "rgb(255, 99, 132)",
+							tension: 0.1,
+						},
+					],
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: { display: true },
+					},
+					scales: {
+						y: {
+							beginAtZero: true,
+							max: hasPlays ? undefined : 1,
+							ticks: { precision: 0, stepSize: hasPlays ? undefined : 1 },
+						},
+						x: { ticks: { autoSkip: true, maxTicksLimit: 9, maxRotation: 0 } },
+					},
+				},
+			});
+		}
+
+		rangeSelect.addEventListener("change", (event) => {
+			const target = event.currentTarget;
+			if (target instanceof HTMLSelectElement) {
+				updateChart(target.value);
+			}
+		});
+
+		updateChart();
+	};
+	window.addEventListener("renderAnalyticsChart", initChart);
+	window.addEventListener("DOMContentLoaded", initChart);
+})();</script> <div class="community-analytics" data-astro-cid-gqpx5okl><h3 data-astro-cid-gqpx5okl>Last 30 days</h3><p data-astro-cid-gqpx5okl>Signed-in map page views: 3930</p><p data-astro-cid-gqpx5okl>Signed-in launch attempts: 1684</p><p data-astro-cid-gqpx5okl>Confirmed Minecraft plays: 2620</p><p data-astro-cid-gqpx5okl>Unique players: 1572</p><p data-astro-cid-gqpx5okl>Played on multiple days: 590</p></div> <section class="discovery" id="discovery-the-sunken-temple" data-astro-cid-slymhmnk> <div class="heading" data-astro-cid-slymhmnk><div data-astro-cid-slymhmnk><h3 data-astro-cid-slymhmnk>Discovery and retention</h3><p data-astro-cid-slymhmnk>See how players find and return to your map.</p></div><div class="controls" data-astro-cid-slymhmnk><label data-astro-cid-slymhmnk>Period <select data-range data-astro-cid-slymhmnk><option value="7" data-astro-cid-slymhmnk>7 days</option><option value="30" selected data-astro-cid-slymhmnk>30 days</option><option value="90" data-astro-cid-slymhmnk>90 days</option></select></label><a data-export href="../../../api/maps/the-sunken-temple/discovery-analytics?days=30&#38;format=csv" download data-astro-cid-slymhmnk>Export CSV</a></div></div> <p data-error role="alert" hidden data-astro-cid-slymhmnk></p> <div class="metrics" data-astro-cid-slymhmnk><div data-astro-cid-slymhmnk><strong data-impressions data-astro-cid-slymhmnk>12070</strong><span data-astro-cid-slymhmnk>Card views</span></div><div data-astro-cid-slymhmnk><strong data-clicks data-astro-cid-slymhmnk>1446</strong><span data-astro-cid-slymhmnk>Clicks</span></div><div data-astro-cid-slymhmnk><strong data-plays data-astro-cid-slymhmnk>605</strong><span data-astro-cid-slymhmnk>Confirmed plays</span></div><div data-astro-cid-slymhmnk><strong data-ctr data-astro-cid-slymhmnk>12.1%</strong><span data-astro-cid-slymhmnk>Click-through</span></div><div data-astro-cid-slymhmnk><strong data-conversion data-astro-cid-slymhmnk>5%</strong><span data-astro-cid-slymhmnk>Views to plays</span></div></div> <div class="heading" data-astro-cid-slymhmnk><h4 data-astro-cid-slymhmnk>Traffic over time</h4><label data-astro-cid-slymhmnk>Source <select data-source data-astro-cid-slymhmnk><option value="all" data-astro-cid-slymhmnk>All sources</option><option value="home-recommended" data-astro-cid-slymhmnk>Home recommendations</option><option value="home-latest" data-astro-cid-slymhmnk>Latest maps</option><option value="browse" data-astro-cid-slymhmnk>Browse maps</option><option value="map-recommended" data-astro-cid-slymhmnk>Related maps</option><option value="weekly" data-astro-cid-slymhmnk>Weekly spotlight</option><option value="other" data-astro-cid-slymhmnk>Other / direct</option></select></label></div> <div class="chart" data-astro-cid-slymhmnk><canvas data-chart aria-label="Daily card views, clicks and confirmed plays" role="img" data-astro-cid-slymhmnk></canvas></div> <h4 data-astro-cid-slymhmnk>Player retention</h4><p class="muted" data-astro-cid-slymhmnk>Of players who first played in this period, the share who returned on the exact day after their first play.</p> <div class="metrics retention" data-astro-cid-slymhmnk><div data-astro-cid-slymhmnk><strong data-retention="1" data-astro-cid-slymhmnk>undefined%</strong><span data-astro-cid-slymhmnk>Day 1</span><small data-cohort="1" data-astro-cid-slymhmnk>0 eligible players</small></div><div data-astro-cid-slymhmnk><strong data-retention="7" data-astro-cid-slymhmnk>undefined%</strong><span data-astro-cid-slymhmnk>Day 7</span><small data-cohort="7" data-astro-cid-slymhmnk>0 eligible players</small></div><div data-astro-cid-slymhmnk><strong data-retention="30" data-astro-cid-slymhmnk>undefined%</strong><span data-astro-cid-slymhmnk>Day 30</span><small data-cohort="30" data-astro-cid-slymhmnk>0 eligible players</small></div></div> <h4 data-astro-cid-slymhmnk>Traffic sources</h4><div class="table-wrap" data-astro-cid-slymhmnk><table data-astro-cid-slymhmnk><thead data-astro-cid-slymhmnk><tr data-astro-cid-slymhmnk><th data-astro-cid-slymhmnk>Source</th><th data-astro-cid-slymhmnk>Card views</th><th data-astro-cid-slymhmnk>Clicks</th><th data-astro-cid-slymhmnk>Confirmed plays</th></tr></thead><tbody data-sources data-astro-cid-slymhmnk><tr data-astro-cid-slymhmnk><th data-astro-cid-slymhmnk>Home recommendations</th><td data-astro-cid-slymhmnk>6035</td><td data-astro-cid-slymhmnk>723</td><td data-astro-cid-slymhmnk>303</td></tr><tr data-astro-cid-slymhmnk><th data-astro-cid-slymhmnk>Latest maps</th><td data-astro-cid-slymhmnk>4023</td><td data-astro-cid-slymhmnk>482</td><td data-astro-cid-slymhmnk>202</td></tr><tr data-astro-cid-slymhmnk><th data-astro-cid-slymhmnk>Browse maps</th><td data-astro-cid-slymhmnk>3018</td><td data-astro-cid-slymhmnk>362</td><td data-astro-cid-slymhmnk>151</td></tr><tr data-astro-cid-slymhmnk><th data-astro-cid-slymhmnk>Related maps</th><td data-astro-cid-slymhmnk>2414</td><td data-astro-cid-slymhmnk>289</td><td data-astro-cid-slymhmnk>121</td></tr><tr data-astro-cid-slymhmnk><th data-astro-cid-slymhmnk>Weekly spotlight</th><td data-astro-cid-slymhmnk>2012</td><td data-astro-cid-slymhmnk>241</td><td data-astro-cid-slymhmnk>101</td></tr></tbody></table></div> <small class="muted" data-astro-cid-slymhmnk>Plays are confirmed in Minecraft. Direct and unattributed traffic appears under Other. Retention is shown only for cohorts old enough to measure.</small> </section>  <script>(function(){const id = "discovery-the-sunken-temple";
+const mapSlug = "the-sunken-temple";
+const initialAnalytics = {"period_days":30,"first_time_players":412,"new_players_returned":96,"returning_players":188,"by_source":{"home-recommended":{"impressions":6035,"clicks":723,"confirmed_plays":303},"home-latest":{"impressions":4023,"clicks":482,"confirmed_plays":202},"browse":{"impressions":3018,"clicks":362,"confirmed_plays":151},"map-recommended":{"impressions":2414,"clicks":289,"confirmed_plays":121},"weekly":{"impressions":2012,"clicks":241,"confirmed_plays":101}},"daily":[{"date":"2026-09-25","impressions":300,"clicks":36,"confirmed_plays":15},{"date":"2026-09-26","impressions":332,"clicks":40,"confirmed_plays":17},{"date":"2026-09-27","impressions":361,"clicks":43,"confirmed_plays":18},{"date":"2026-09-28","impressions":385,"clicks":46,"confirmed_plays":19},{"date":"2026-09-29","impressions":402,"clicks":48,"confirmed_plays":20},{"date":"2026-09-30","impressions":410,"clicks":49,"confirmed_plays":21},{"date":"2026-10-01","impressions":409,"clicks":49,"confirmed_plays":20},{"date":"2026-10-02","impressions":400,"clicks":48,"confirmed_plays":20},{"date":"2026-10-03","impressions":385,"clicks":46,"confirmed_plays":19},{"date":"2026-10-04","impressions":365,"clicks":44,"confirmed_plays":18},{"date":"2026-10-05","impressions":345,"clicks":41,"confirmed_plays":17},{"date":"2026-10-06","impressions":326,"clicks":39,"confirmed_plays":16},{"date":"2026-10-07","impressions":311,"clicks":37,"confirmed_plays":16},{"date":"2026-10-08","impressions":304,"clicks":36,"confirmed_plays":15},{"date":"2026-10-09","impressions":304,"clicks":36,"confirmed_plays":15},{"date":"2026-10-10","impressions":313,"clicks":38,"confirmed_plays":16},{"date":"2026-10-11","impressions":331,"clicks":40,"confirmed_plays":17},{"date":"2026-10-12","impressions":356,"clicks":43,"confirmed_plays":18},{"date":"2026-10-13","impressions":386,"clicks":46,"confirmed_plays":19},{"date":"2026-10-14","impressions":418,"clicks":50,"confirmed_plays":21},{"date":"2026-10-15","impressions":450,"clicks":54,"confirmed_plays":23},{"date":"2026-10-16","impressions":479,"clicks":57,"confirmed_plays":24},{"date":"2026-10-17","impressions":501,"clicks":60,"confirmed_plays":25},{"date":"2026-10-18","impressions":517,"clicks":62,"confirmed_plays":26},{"date":"2026-10-19","impressions":523,"clicks":63,"confirmed_plays":26},{"date":"2026-10-20","impressions":521,"clicks":63,"confirmed_plays":26},{"date":"2026-10-21","impressions":511,"clicks":61,"confirmed_plays":26},{"date":"2026-10-22","impressions":495,"clicks":59,"confirmed_plays":25},{"date":"2026-10-23","impressions":475,"clicks":57,"confirmed_plays":24},{"date":"2026-10-24","impressions":455,"clicks":55,"confirmed_plays":23}],"source_daily":{},"totals":{"impressions":12070,"clicks":1446,"confirmed_plays":605},"rates":{"click_through_percent":12.1,"impression_to_play_percent":5},"retention":{"d1":{"eligible":400,"returned":120,"percent":30},"d7":{"eligible":350,"returned":63,"percent":18},"d30":{"eligible":200,"returned":18,"percent":9}}};
+
+	const root = document.getElementById(id);
+	const sourceLabels = { "home-recommended": "Home recommendations", "home-latest": "Latest maps", browse: "Browse maps", "map-recommended": "Related maps", weekly: "Weekly spotlight", other: "Other / direct" };
+	let data = initialAnalytics;
+	let chart;
+	let requestNumber = 0;
+	const number = (value) => Number(value ?? 0).toLocaleString();
+	const percent = (value) => value == null ? "—" : `${value}%`;
+	function drawChart() {
+		if (!root || !window.Chart) return;
+		const source = root.querySelector("[data-source]").value;
+		const rows = data.daily.map((day) => source === "all" ? day : (data.source_daily[day.date]?.[source] ?? { impressions:0, clicks:0, confirmed_plays:0 }));
+		chart?.destroy();
+		chart = new window.Chart(root.querySelector("[data-chart]"), { type:"line", data:{ labels:data.daily.map((day) => day.date), datasets:[
+			{ label:"Card views", data:rows.map((row) => row.impressions), borderColor:"#a4da58", tension:.2 },
+			{ label:"Clicks", data:rows.map((row) => row.clicks), borderColor:"#70b8ff", tension:.2 },
+			{ label:"Confirmed plays", data:rows.map((row) => row.confirmed_plays), borderColor:"#e6a567", tension:.2 },
+		] }, options:{ responsive:true, maintainAspectRatio:false, scales:{ y:{ beginAtZero:true, ticks:{ precision:0 } }, x:{ ticks:{ maxTicksLimit:9 } } } } });
+	}
+	function render() {
+		if (!root) return;
+		for (const [key,value] of Object.entries({ impressions:data.totals.impressions, clicks:data.totals.clicks, plays:data.totals.confirmed_plays })) root.querySelector(`[data-${key}]`).textContent = number(value);
+		root.querySelector("[data-ctr]").textContent = percent(data.rates.click_through_percent);
+		root.querySelector("[data-conversion]").textContent = percent(data.rates.impression_to_play_percent);
+		for (const day of [1,7,30]) {
+			root.querySelector(`[data-retention="${day}"]`).textContent = percent(data.retention[`day_${day}`]?.percent);
+			root.querySelector(`[data-cohort="${day}"]`).textContent = `${number(data.retention[`day_${day}`]?.eligible)} eligible players`;
+		}
+		const body = root.querySelector("[data-sources]");
+		body.replaceChildren();
+		for (const [source,row] of Object.entries(data.by_source)) {
+			if (!row.impressions && !row.clicks && !row.confirmed_plays) continue;
+			const tr = document.createElement("tr");
+			for (const [index,value] of [sourceLabels[source] ?? source,row.impressions,row.clicks,row.confirmed_plays].entries()) {
+				const cell = document.createElement(index ? "td" : "th"); cell.textContent = typeof value === "number" ? number(value) : value; tr.append(cell);
+			}
+			body.append(tr);
+		}
+		drawChart();
+	}
+	root?.querySelector("[data-source]")?.addEventListener("change", drawChart);
+	root?.querySelector("[data-range]")?.addEventListener("change", async (event) => {
+		const days = event.target.value;
+		const current = ++requestNumber;
+		const error = root.querySelector("[data-error]"); error.hidden = true;
+		try {
+			const response = await fetch(`/api/maps/${encodeURIComponent(mapSlug)}/discovery-analytics?days=${days}`);
+			if (!response.ok) throw new Error("Could not load discovery analytics. Try another range.");
+			const next = await response.json();
+			if (current !== requestNumber) return;
+			data = next;
+			root.querySelector("[data-export]").href = `/api/maps/${encodeURIComponent(mapSlug)}/discovery-analytics?days=${days}&format=csv`;
+			render();
+		} catch (cause) { if (current === requestNumber) { error.textContent = cause.message; error.hidden = false; } }
+	});
+	if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", render, { once:true }); else render();
+})();</script> <section class="server-insights" data-astro-cid-gqpx5okl><h3 data-astro-cid-gqpx5okl>Game server events · last 30 days</h3><div class="insight-grid" data-astro-cid-gqpx5okl><p data-astro-cid-gqpx5okl><strong data-astro-cid-gqpx5okl>0</strong><span data-astro-cid-gqpx5okl>Joins</span></p><p data-astro-cid-gqpx5okl><strong data-astro-cid-gqpx5okl>0</strong><span data-astro-cid-gqpx5okl>Deaths</span></p><p data-astro-cid-gqpx5okl><strong data-astro-cid-gqpx5okl>0</strong><span data-astro-cid-gqpx5okl>Advancements</span></p><p data-astro-cid-gqpx5okl><strong data-astro-cid-gqpx5okl>0</strong><span data-astro-cid-gqpx5okl>Score improvements</span></p></div><small data-astro-cid-gqpx5okl>Collected from authenticated game servers. Chat and command text are never stored.</small></section> </section> <section class="tab-panel" data-tab-panel="versions" data-astro-cid-7hjglg7f> <!--[--><div class="pixel-box card tab-card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-7hjglg7f="true"><!--[0--> <div class="tab-content" data-astro-cid-7hjglg7f> <div class="tab-header" data-astro-cid-7hjglg7f> <h2 data-astro-cid-7hjglg7f>Versions</h2> <!--[--><!--[0--><a href="../../../maps/the-sunken-temple/add_version/" class="btn v-secondary  svelte-zq1vjl" data-astro-cid-7hjglg7f="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->Add Version<!----><!--]--><!----></div><!----></a><!--]--><!--]--> </div> <div class="version-list" data-astro-cid-7hjglg7f> <div class="version-card" data-astro-cid-7hjglg7f> <div class="version-row" data-astro-cid-7hjglg7f> <div class="version-info" data-astro-cid-7hjglg7f> <h3 data-astro-cid-7hjglg7f>v1.2 — Balance patch</h3> <div class="version-meta" data-astro-cid-7hjglg7f> <span class="version-status version-status--public" data-astro-cid-7hjglg7f>Approved</span> <span class="dash" data-astro-cid-7hjglg7f>-</span> <span data-astro-cid-7hjglg7f>1.21.1</span> </div>  </div> <div class="version-actions" data-astro-cid-7hjglg7f>   <!--[--><!--[-1--><button type="button" class="btn v-danger js-delete-version svelte-zq1vjl" size="sm" data-map-slug="the-sunken-temple" data-version-id="1022" data-astro-cid-7hjglg7f="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-danger-main); --pb-light: var(--color-danger-light); --pb-dark: var(--color-danger-dark); color: white; "><!--[0-->
+Delete
+<!----><!--]--><!----></div><!----></button><!--]--><!--]--> </div> </div> </div><div class="version-card" data-astro-cid-7hjglg7f> <div class="version-row" data-astro-cid-7hjglg7f> <div class="version-info" data-astro-cid-7hjglg7f> <h3 data-astro-cid-7hjglg7f>v1.0 — Release</h3> <div class="version-meta" data-astro-cid-7hjglg7f> <span class="version-status version-status--public" data-astro-cid-7hjglg7f>Approved</span> <span class="dash" data-astro-cid-7hjglg7f>-</span> <span data-astro-cid-7hjglg7f>1.21.1</span> </div>  </div> <div class="version-actions" data-astro-cid-7hjglg7f>   <!--[--><!--[-1--><button type="button" class="btn v-danger js-delete-version svelte-zq1vjl" size="sm" data-map-slug="the-sunken-temple" data-version-id="1021" data-astro-cid-7hjglg7f="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-danger-main); --pb-light: var(--color-danger-light); --pb-dark: var(--color-danger-dark); color: white; "><!--[0-->
+Delete
+<!----><!--]--><!----></div><!----></button><!--]--><!--]--> </div> </div> </div> </div> </div> <!----><!--]--><!----></div><!--]--> </section> <script>
+	const versionSlug = (element) => element.getAttribute("data-map-slug");
+	const versionId = (element) => element.getAttribute("data-version-id");
+
+	const approveButtons = document.querySelectorAll(".js-approve-version");
+	const denyButtons = document.querySelectorAll(".js-deny-version");
+	const editButtons = document.querySelectorAll(".js-edit-version");
+
+	for (const element of approveButtons) {
+		if (!(element instanceof HTMLButtonElement) || element.dataset.bound === "true") continue;
+		element.dataset.bound = "true";
+
+		element.addEventListener("click", async () => {
+			if (element.dataset.processing === "true") return;
+			element.dataset.processing = "true";
+
+			const response = await fetch(
+				`/api/maps/${encodeURIComponent(versionSlug(element))}/versions/${encodeURIComponent(versionId(element))}/approve`,
+				{ method: "POST" },
+			);
+
+			if (!response.ok) {
+				element.dataset.processing = "false";
+				window.showToast?.("Failed to approve version", "danger", "bi bi-exclamation-triangle");
+				return;
+			}
+
+			window.showToast?.("Version approved", "primary", "bi bi-check-circle-fill");
+			window.location.reload();
+		});
+	}
+
+	for (const element of denyButtons) {
+		if (!(element instanceof HTMLButtonElement) || element.dataset.bound === "true") continue;
+		element.dataset.bound = "true";
+
+		element.addEventListener("click", async () => {
+			const reason = window.prompt("Reason for denying this version:");
+			if (!reason || !reason.trim()) return;
+
+			const body = new FormData();
+			body.set("reason", reason.trim());
+
+			const response = await fetch(
+				`/api/maps/${encodeURIComponent(versionSlug(element))}/versions/${encodeURIComponent(versionId(element))}/deny`,
+				{ method: "POST", body },
+			);
+
+			if (!response.ok) {
+				window.showToast?.("Failed to deny version", "danger", "bi bi-exclamation-triangle");
+				return;
+			}
+
+			window.showToast?.("Version denied", "alert", "bi bi-x-circle-fill");
+			window.location.reload();
+		});
+	}
+
+	for (const element of editButtons) {
+		if (!(element instanceof HTMLButtonElement) || element.dataset.bound === "true") continue;
+		element.dataset.bound = "true";
+
+		element.addEventListener("click", async () => {
+			const currentName = element.getAttribute("data-version-name") ?? "";
+			const currentChanges = element.getAttribute("data-version-changes") ?? "";
+
+			const name = window.prompt("Version name:", currentName);
+			if (name === null) return;
+
+			const changes = window.prompt("Changelog / notes:", currentChanges) ?? "";
+
+			const body = new FormData();
+			body.set("name", name.trim());
+			body.set("changes", changes.trim());
+
+			const response = await fetch(
+				`/api/maps/${encodeURIComponent(versionSlug(element))}/versions/${encodeURIComponent(versionId(element))}/edit`,
+				{ method: "POST", body },
+			);
+
+			if (!response.ok) {
+				window.showToast?.("Failed to update version", "danger", "bi bi-exclamation-triangle");
+				return;
+			}
+
+			window.showToast?.("Version updated", "primary", "bi bi-check-circle-fill");
+			window.location.reload();
+		});
+	}
+
+	const deleteButtons = document.querySelectorAll(".js-delete-version");
+
+	for (const element of deleteButtons) {
+		if (!(element instanceof HTMLButtonElement)) {
+			continue;
+		}
+
+		if (element.dataset.bound === "true") {
+			continue;
+		}
+
+		element.dataset.bound = "true";
+
+		element.addEventListener("click", async () => {
+			if (element.dataset.deleting === "true") {
+				return;
+			}
+
+			const mapSlug = element.getAttribute("data-map-slug");
+			const versionId = element.getAttribute("data-version-id");
+
+			if (!mapSlug || !versionId) {
+				return;
+			}
+
+			const confirmed = await window.mapverseConfirm("Are you sure you want to delete this version?", { title: "Delete Version", variant: "danger", confirmText: "Delete" });
+
+			if (!confirmed) {
+				return;
+			}
+
+			element.dataset.deleting = "true";
+			element.disabled = true;
+
+			const response = await fetch(
+				`/api/maps/${encodeURIComponent(mapSlug)}/versions/${encodeURIComponent(versionId)}/delete`,
+				{
+					method: "POST",
+				},
+			);
+
+			if (!response.ok) {
+				element.dataset.deleting = "false";
+				element.disabled = false;
+
+				window.showToast?.(
+					"Failed to delete version",
+					"danger",
+					"bi bi-exclamation-triangle",
+				);
+
+				return;
+			}
+
+			window.showToast?.("Version deleted", "primary", "bi bi-trash-fill");
+			window.location.href = `/dashboard/map/${encodeURIComponent(mapSlug)}`;
+		});
+	}
+</script>   <section class="tab-panel" data-tab-panel="edit" data-astro-cid-hz2fnb3e> <!--[--><div class="pixel-box card tab-card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-hz2fnb3e="true"><!--[0--> <div class="tab-content" data-astro-cid-hz2fnb3e> <h2 data-astro-cid-hz2fnb3e>Edit Map</h2> <form class="create-map-form" method="post" enctype="multipart/form-data" action="../../../api/maps/the-sunken-temple/edit" data-astro-cid-hz2fnb3e> <div class="requirements" data-astro-cid-hz2fnb3e>
+Read the <a href="../../../content-policy/" target="_blank" data-astro-cid-hz2fnb3e>content policy</a> before editing your map. Don’t worry, it’s very easy to understand!
+</div> <div class="field" data-astro-cid-hz2fnb3e> <label for="title" data-astro-cid-hz2fnb3e>Name:</label> <!--[--><div class="pixel-box input-wrap  svelte-13ydige" style=" --pb-bg: var(--color-base-main); --pb-light: var(--color-base-light); --pb-dark: var(--color-base-dark); color: var(--color-text-2); "><input id="title" name="title" type="text" placeholder="" value="The Sunken Temple" class="input-field svelte-l7cdkp" required="" data-astro-cid-hz2fnb3e="true"/><!----></div><!--]--> </div> <div class="field" data-astro-cid-hz2fnb3e> <label for="description" data-astro-cid-hz2fnb3e>Description:</label> <div class="editor-shell" data-astro-cid-hz2fnb3e> <astro-island uid="1JENVv" component-url="../../../_astro/MapDescriptionEditor.Cjj7-jxP.js" component-export="default" renderer-url="../../../_astro/client.svelte.Tl7DXQbT.js" props="{&quot;name&quot;:[0,&quot;description&quot;],&quot;value&quot;:[0,&quot;Dive beneath the waves to explore an ancient temple. Solve pressure-plate puzzles, dodge guardians and recover the Heart of the Sea.\n\n## Features\n- 1–2 players\n- Custom textures &amp; sounds\n- Approx. 47 minutes of gameplay\n\n**Have fun and leave a review!**&quot;],&quot;data-astro-cid-hz2fnb3e&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;MapDescriptionEditor&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="editor-shell svelte-1c51p4l"><div class="svelte-1c51p4l"></div> <input id="description" name="description" type="hidden" value="Dive beneath the waves to explore an ancient temple. Solve pressure-plate puzzles, dodge guardians and recover the Heart of the Sea.
+
+## Features
+- 1–2 players
+- Custom textures &amp; sounds
+- Approx. 47 minutes of gameplay
+
+**Have fun and leave a review!**"/></div><!--]--><!--astro:end--></astro-island> </div> </div> <div class="field" data-astro-cid-hz2fnb3e> <label for="youtube_link" data-astro-cid-hz2fnb3e>YouTube Link:</label> <!--[--><div class="pixel-box input-wrap  svelte-13ydige" style=" --pb-bg: var(--color-base-main); --pb-light: var(--color-base-light); --pb-dark: var(--color-base-dark); color: var(--color-text-2); "><input id="youtube_link" name="youtube_link" type="url" placeholder="" value="" class="input-field svelte-l7cdkp" data-astro-cid-hz2fnb3e="true"/><!----></div><!--]--> </div> <div class="field" data-astro-cid-hz2fnb3e> <label for="license_url" data-astro-cid-hz2fnb3e>License URL:</label> <!--[--><div class="pixel-box input-wrap  svelte-13ydige" style=" --pb-bg: var(--color-base-main); --pb-light: var(--color-base-light); --pb-dark: var(--color-base-dark); color: var(--color-text-2); "><input id="license_url" name="license_url" type="url" placeholder="" value="" class="input-field svelte-l7cdkp" data-astro-cid-hz2fnb3e="true"/><!----></div><!--]--> </div> <div class="field" data-astro-cid-hz2fnb3e> <label for="scoreboard_name" data-astro-cid-hz2fnb3e>Scoreboard Name:</label> <p class="field-help" data-astro-cid-hz2fnb3e>
+The name of the in-game scoreboard used to track stats. This allows MapVerse to display a leaderboard for your map.
+</p> <!--[--><div class="pixel-box input-wrap  svelte-13ydige" style=" --pb-bg: var(--color-base-main); --pb-light: var(--color-base-light); --pb-dark: var(--color-base-dark); color: var(--color-text-2); "><input id="scoreboard_name" name="scoreboard_name" type="text" placeholder="" value="" class="input-field svelte-l7cdkp" data-astro-cid-hz2fnb3e="true"/><!----></div><!--]--> </div> <div class="field" data-astro-cid-hz2fnb3e> <label for="visibility" data-astro-cid-hz2fnb3e>Visibility:</label> <select id="visibility" name="visibility" data-astro-cid-hz2fnb3e> <option value="public" selected data-short="Public" data-long="Public" data-astro-cid-hz2fnb3e>Public</option> <option value="testing" data-short="Testing / Unlisted" data-long="Testing / Unlisted (Only accessible via direct link)" data-astro-cid-hz2fnb3e>Testing / Unlisted (Only accessible via direct link)</option> <option value="private" data-short="Private" data-long="Private (Only you can access)" data-astro-cid-hz2fnb3e>Private (Only you can access)</option> </select> </div> <div class="field" data-astro-cid-dmkl7dcd> <label for="thumbnails" data-astro-cid-dmkl7dcd>
+Thumbnails:
+<span class="field-note" data-astro-cid-dmkl7dcd>Recommended size is 1920x1080. Up to 5 images.</span> </label> <input type="hidden" id="existing_thumbnails" name="existing_thumbnails" value="thumb-ocean-2.png,thumb-ocean-3.png,thumb-ocean-1.png" data-astro-cid-dmkl7dcd> <div class="thumbnail-list" id="thumbnails-list" data-astro-cid-dmkl7dcd> <div class="thumbnail-item existing-thumbnail" data-thumbnail="thumb-ocean-2.png" data-astro-cid-dmkl7dcd> <div class="thumbnail-preview" data-astro-cid-dmkl7dcd> <img src="../../../cdn/thumb/thumb-ocean-2.png" alt="" data-astro-cid-dmkl7dcd> </div> <button type="button" class="remove-thumb" aria-label="Remove thumbnail" data-astro-cid-dmkl7dcd>&times;</button> </div><div class="thumbnail-item existing-thumbnail" data-thumbnail="thumb-ocean-3.png" data-astro-cid-dmkl7dcd> <div class="thumbnail-preview" data-astro-cid-dmkl7dcd> <img src="../../../cdn/thumb/thumb-ocean-3.png" alt="" data-astro-cid-dmkl7dcd> </div> <button type="button" class="remove-thumb" aria-label="Remove thumbnail" data-astro-cid-dmkl7dcd>&times;</button> </div><div class="thumbnail-item existing-thumbnail" data-thumbnail="thumb-ocean-1.png" data-astro-cid-dmkl7dcd> <div class="thumbnail-preview" data-astro-cid-dmkl7dcd> <img src="../../../cdn/thumb/thumb-ocean-1.png" alt="" data-astro-cid-dmkl7dcd> </div> <button type="button" class="remove-thumb" aria-label="Remove thumbnail" data-astro-cid-dmkl7dcd>&times;</button> </div> <label class="thumbnail-add" for="thumbnails" data-astro-cid-dmkl7dcd> <span data-astro-cid-dmkl7dcd>+</span> </label> <input class="thumbnail-input" id="thumbnails" name="thumbnails" type="file" accept="image/*" multiple data-astro-cid-dmkl7dcd> </div> </div> <script>(function(){const id = "thumbnails";
+const maxFiles = 5;
+const initialCount = 3;
+
+	const inputEl = document.getElementById(id);
+	const listEl = document.getElementById(`${id}-list`);
+	const existingThumbsInput = document.getElementById("existing_thumbnails");
+
+	if (!(inputEl instanceof HTMLInputElement) || !(listEl instanceof HTMLElement) || !(existingThumbsInput instanceof HTMLInputElement)) {
+		throw new Error("Thumbnail uploader elements not found");
+	}
+
+	const input = inputEl;
+	const list = listEl;
+	const selectedFiles = [];
+	let totalThumbnails = initialCount;
+
+	function updateExistingThumbnailsInput() {
+		const existing = Array.from(list.querySelectorAll(".existing-thumbnail"))
+			.map((el) => (el instanceof HTMLElement ? el.dataset.thumbnail ?? "" : ""))
+			.filter(Boolean);
+		existingThumbsInput.value = existing.join(",");
+	}
+
+	function syncInputFiles() {
+		const dataTransfer = new DataTransfer();
+
+		selectedFiles.forEach((file) => {
+			dataTransfer.items.add(file);
+		});
+
+		input.files = dataTransfer.files;
+	}
+
+	function updateAddButton() {
+		const addButton = list.querySelector(".thumbnail-add");
+
+		if (!(addButton instanceof HTMLElement)) {
+			return;
+		}
+
+		addButton.style.display = totalThumbnails >= Number(maxFiles) ? "none" : "inline-flex";
+	}
+
+	function setupExistingRemoveButtons() {
+		const removeButtons = list.querySelectorAll(".existing-thumbnail .remove-thumb");
+		removeButtons.forEach((button) => {
+			if (!(button instanceof HTMLButtonElement)) {
+				return;
+			}
+
+			button.addEventListener("click", (e) => {
+				e.preventDefault();
+				const item = button.closest(".thumbnail-item");
+				if (item instanceof HTMLElement) {
+					item.remove();
+					totalThumbnails--;
+					updateAddButton();
+					updateExistingThumbnailsInput();
+				}
+			});
+		});
+	}
+
+	function addPreview(file) {
+		const reader = new FileReader();
+
+		reader.onload = (event) => {
+			const result = event.target?.result;
+
+			if (typeof result !== "string") {
+				return;
+			}
+
+			const item = document.createElement("div");
+			item.className = "thumbnail-item";
+			item.dataset.key = `${file.name}-${file.size}-${file.lastModified}`;
+
+			item.innerHTML = `
+				<div class="thumbnail-preview">
+					<img src="${result}" alt="" />
+				</div>
+				<button type="button" class="remove-thumb" aria-label="Remove thumbnail">&times;</button>
+			`;
+
+			const removeButton = item.querySelector(".remove-thumb");
+			const addButton = list.querySelector(".thumbnail-add");
+
+			if (!(removeButton instanceof HTMLButtonElement) || !(addButton instanceof HTMLElement)) {
+				return;
+			}
+
+			removeButton.addEventListener("click", (e) => {
+				e.preventDefault();
+				const index = selectedFiles.findIndex((existingFile) => {
+					return (
+						existingFile.name === file.name &&
+						existingFile.size === file.size &&
+						existingFile.lastModified === file.lastModified
+					);
+				});
+
+				if (index !== -1) {
+					selectedFiles.splice(index, 1);
+				}
+
+				syncInputFiles();
+				totalThumbnails--;
+				updateAddButton();
+				item.remove();
+			});
+
+			list.insertBefore(item, addButton);
+		};
+
+		reader.readAsDataURL(file);
+	}
+
+	input.addEventListener("change", (event) => {
+		const target = event.currentTarget;
+
+		if (!(target instanceof HTMLInputElement) || !target.files) {
+			return;
+		}
+
+		const remainingSlots = Number(maxFiles) - totalThumbnails;
+
+		if (remainingSlots <= 0) {
+			input.value = "";
+			return;
+		}
+
+		const filesToAdd = Array.from(target.files).filter((file) => file.type.startsWith("image/")).slice(0, remainingSlots);
+
+		filesToAdd.forEach((file) => {
+			selectedFiles.push(file);
+			totalThumbnails++;
+			addPreview(file);
+		});
+
+		syncInputFiles();
+		updateAddButton();
+	});
+
+	setupExistingRemoveButtons();
+	updateAddButton();
+
+})();</script> <div class="tag-selector" data-astro-cid-v6yguhqg> <div class="tag-selector__header" data-astro-cid-v6yguhqg> <label class="tag-selector__label" data-astro-cid-v6yguhqg>Tags:</label> <small data-astro-cid-v6yguhqg>Select up to 3</small> </div> <!--[--><div class="pixel-box card tag-selector__card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-v6yguhqg="true"><!--[0--> <div class="tag-selector__grid" data-max-selected="3" data-astro-cid-v6yguhqg> <label class="tag-selector__item" for="tag-adventure" data-astro-cid-v6yguhqg> <input id="tag-adventure" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="adventure" checked data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>Adventure</span> </label><label class="tag-selector__item" for="tag-parkour" data-astro-cid-v6yguhqg> <input id="tag-parkour" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="parkour" data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>Parkour</span> </label><label class="tag-selector__item" for="tag-puzzle" data-astro-cid-v6yguhqg> <input id="tag-puzzle" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="puzzle" checked data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>Puzzle</span> </label><label class="tag-selector__item" for="tag-pvp" data-astro-cid-v6yguhqg> <input id="tag-pvp" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="pvp" data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>PvP</span> </label><label class="tag-selector__item" for="tag-survival" data-astro-cid-v6yguhqg> <input id="tag-survival" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="survival" data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>Survival</span> </label><label class="tag-selector__item" for="tag-horror" data-astro-cid-v6yguhqg> <input id="tag-horror" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="horror" data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>Horror</span> </label><label class="tag-selector__item" for="tag-minigame" data-astro-cid-v6yguhqg> <input id="tag-minigame" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="minigame" data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>Minigame</span> </label><label class="tag-selector__item" for="tag-escape" data-astro-cid-v6yguhqg> <input id="tag-escape" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="escape" data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>Escape Room</span> </label><label class="tag-selector__item" for="tag-rpg" data-astro-cid-v6yguhqg> <input id="tag-rpg" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="rpg" data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>RPG</span> </label><label class="tag-selector__item" for="tag-creative" data-astro-cid-v6yguhqg> <input id="tag-creative" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="creative" data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>Creative</span> </label><label class="tag-selector__item" for="tag-jrc26" data-astro-cid-v6yguhqg> <input id="tag-jrc26" class="tag-selector__checkbox" type="checkbox" name="tag_ids" value="jrc26" data-astro-cid-v6yguhqg> <span data-astro-cid-v6yguhqg>JRC 2026</span> </label> </div> <!----><!--]--><!----></div><!--]--> </div>  <div class="field" data-astro-cid-hz2fnb3e> <label for="saves_progress" class="switch-row" data-astro-cid-hz2fnb3e> <input id="saves_progress" name="saves_progress" type="checkbox" class="switch-input" data-astro-cid-hz2fnb3e> <span class="switch" data-astro-cid-hz2fnb3e> <span class="switch-thumb" data-astro-cid-hz2fnb3e></span> </span> <span class="switch-label" data-astro-cid-hz2fnb3e>
+Saves Progress
+<small data-astro-cid-hz2fnb3e>
+Only enable if your map allows building, leveling, or similar.
+								Users without an account cannot play maps with progress saving.
+</small> </span> </label> </div> <div class="field" data-astro-cid-hz2fnb3e> <label for="allows_download" class="switch-row" data-astro-cid-hz2fnb3e> <input id="allows_download" name="allows_download" type="checkbox" class="switch-input" checked data-astro-cid-hz2fnb3e> <span class="switch" data-astro-cid-hz2fnb3e> <span class="switch-thumb" data-astro-cid-hz2fnb3e></span> </span> <span class="switch-label" data-astro-cid-hz2fnb3e>
+Allow Downloads
+<small data-astro-cid-hz2fnb3e>Allow users to download this map directly.</small> </span> </label> </div> <astro-island uid="1GJLKI" component-url="../../../_astro/PlayerRangeSlider.D4mzpMXk.js" component-export="default" renderer-url="../../../_astro/client.svelte.Tl7DXQbT.js" props="{&quot;minName&quot;:[0,&quot;min_players&quot;],&quot;maxName&quot;:[0,&quot;max_players&quot;],&quot;min&quot;:[0,1],&quot;max&quot;:[0,2],&quot;data-astro-cid-hz2fnb3e&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;PlayerRangeSlider&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="field svelte-klb0np"><label for="max_players" class="svelte-klb0np">Player Range: <span>1 - 2 players</span></label> <div class="player-count-container svelte-klb0np" style="--slider-left:0%; --slider-right:11.11111111111111%;"><div class="slider-track svelte-klb0np"></div> <input type="range" min="1" max="10" value="1" class="slider slider-min svelte-klb0np" id="min_players" name="min_players"/> <input type="range" min="1" max="10" value="2" class="slider slider-max svelte-klb0np" id="max_players" name="max_players"/></div></div><!--]--><!--astro:end--></astro-island> <div class="actions" data-astro-cid-hz2fnb3e> <!--[--><!--[-1--><button type="submit" class="btn v-secondary action-button svelte-zq1vjl" data-astro-cid-hz2fnb3e="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->
+Save Changes
+<!----><!--]--><!----></div><!----></button><!--]--><!--]--> </div> </form> </div> <!----><!--]--><!----></div><!--]--> </section>  <section class="tab-panel" data-tab-panel="achievements" data-astro-cid-3x4ghoeu> <!--[--><div class="pixel-box card tab-card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-3x4ghoeu="true"><!--[0--> <div class="tab-content" data-astro-cid-3x4ghoeu> <div class="section-header" data-astro-cid-3x4ghoeu> <h2 data-astro-cid-3x4ghoeu>Map Achievements</h2> <!--[--><!--[-1--><button type="button" class="btn v-primary add-btn svelte-zq1vjl" id="add-achievement-btn" data-astro-cid-3x4ghoeu="true"><div class="pixel-box btn-inner btn-primary svelte-13ydige" style=" --pb-bg: var(--color-primary-main); --pb-light: var(--color-primary-light); --pb-dark: var(--color-primary-dark); color: var(--color-text-1); "><!--[0--> <i class="bi bi-plus-lg" data-astro-cid-3x4ghoeu></i> Add Achievement
+<!----><!--]--><!----></div><!----></button><!--]--><!--]--> </div> <p class="section-help" data-astro-cid-3x4ghoeu>
+Define achievements that players can unlock on your map. Types:
+<strong data-astro-cid-3x4ghoeu>Completion</strong> (finish the map),
+<strong data-astro-cid-3x4ghoeu>Collectable</strong> (find X items),
+<strong data-astro-cid-3x4ghoeu>Speed</strong> (complete under time),
+<strong data-astro-cid-3x4ghoeu>Hidden</strong> (secret discoveries).
+</p> <!-- Activity Feed (recent unlocks) --> <div class="activity-feed" id="activity-feed" style="display:none" data-astro-cid-3x4ghoeu> <div class="activity-header" data-astro-cid-3x4ghoeu> <h3 data-astro-cid-3x4ghoeu><i class="bi bi-activity" data-astro-cid-3x4ghoeu></i> Recent Activity <span class="activity-badge" id="activity-badge" data-astro-cid-3x4ghoeu></span></h3> </div> <div class="activity-list" id="activity-list" data-astro-cid-3x4ghoeu></div> </div> <!-- Achievement List --> <div class="achievement-list" id="achievement-list" data-astro-cid-3x4ghoeu> <div class="loading-state" id="achievements-loading" data-astro-cid-3x4ghoeu> <i class="bi bi-hourglass" data-astro-cid-3x4ghoeu></i> Loading achievements...
+</div> </div> <!-- Empty State --> <div class="empty-state" id="achievements-empty" style="display:none" data-astro-cid-3x4ghoeu> <i class="bi bi-trophy" data-astro-cid-3x4ghoeu></i> <p data-astro-cid-3x4ghoeu>No achievements defined yet.</p> <p class="empty-sub" data-astro-cid-3x4ghoeu>Add achievements to give players extra goals and rewards on your map.</p> </div> <!-- Add/Edit Form (hidden by default) --> <div class="achievement-form" id="achievement-form" style="display:none" data-astro-cid-3x4ghoeu> <h3 id="form-title" data-astro-cid-3x4ghoeu>Add Achievement</h3> <input type="hidden" id="ach-id" value="" data-astro-cid-3x4ghoeu> <div class="field" data-astro-cid-3x4ghoeu> <label for="ach-key" data-astro-cid-3x4ghoeu>Key <small data-astro-cid-3x4ghoeu>(short unique ID, e.g. "parkour_master")</small></label> <!--[--><div class="pixel-box input-wrap  svelte-13ydige" style=" --pb-bg: var(--color-base-main); --pb-light: var(--color-base-light); --pb-dark: var(--color-base-dark); color: var(--color-text-2); "><input id="ach-key" type="text" placeholder="parkour_master" value="" class="input-field svelte-l7cdkp" required="" data-astro-cid-3x4ghoeu="true"/><!----></div><!--]--> </div> <div class="field" data-astro-cid-3x4ghoeu> <label for="ach-name" data-astro-cid-3x4ghoeu>Name</label> <!--[--><div class="pixel-box input-wrap  svelte-13ydige" style=" --pb-bg: var(--color-base-main); --pb-light: var(--color-base-light); --pb-dark: var(--color-base-dark); color: var(--color-text-2); "><input id="ach-name" type="text" placeholder="Parkour Master" value="" class="input-field svelte-l7cdkp" required="" data-astro-cid-3x4ghoeu="true"/><!----></div><!--]--> </div> <div class="field" data-astro-cid-3x4ghoeu> <label for="ach-desc" data-astro-cid-3x4ghoeu>Description</label> <textarea id="ach-desc" class="ach-textarea" placeholder="Complete the parkour course in under 60 seconds" rows="2" data-astro-cid-3x4ghoeu></textarea> </div> <div class="field-row" data-astro-cid-3x4ghoeu> <div class="field" data-astro-cid-3x4ghoeu> <label for="ach-type" data-astro-cid-3x4ghoeu>Type</label> <select id="ach-type" required data-astro-cid-3x4ghoeu> <option value="completion" data-astro-cid-3x4ghoeu>Completion</option> <option value="collectable" data-astro-cid-3x4ghoeu>Collectable</option> <option value="speed" data-astro-cid-3x4ghoeu>Speed</option> <option value="hidden" data-astro-cid-3x4ghoeu>Hidden</option> </select> </div> <div class="field" data-astro-cid-3x4ghoeu> <label for="ach-target" data-astro-cid-3x4ghoeu>Target <small data-astro-cid-3x4ghoeu>(e.g. 1 for completion, 5 for collectables)</small></label> <!--[--><div class="pixel-box input-wrap  svelte-13ydige" style=" --pb-bg: var(--color-base-main); --pb-light: var(--color-base-light); --pb-dark: var(--color-base-dark); color: var(--color-text-2); "><input id="ach-target" type="number" placeholder="" value="1" class="input-field svelte-l7cdkp" min="1" required="" data-astro-cid-3x4ghoeu="true"/><!----></div><!--]--> </div> </div> <div class="field-row" data-astro-cid-3x4ghoeu> <div class="field" data-astro-cid-3x4ghoeu> <label for="ach-xp" data-astro-cid-3x4ghoeu>XP Reward</label> <!--[--><div class="pixel-box input-wrap  svelte-13ydige" style=" --pb-bg: var(--color-base-main); --pb-light: var(--color-base-light); --pb-dark: var(--color-base-dark); color: var(--color-text-2); "><input id="ach-xp" type="number" placeholder="" value="50" class="input-field svelte-l7cdkp" min="1" max="1000" required="" data-astro-cid-3x4ghoeu="true"/><!----></div><!--]--> </div> <div class="field" data-astro-cid-3x4ghoeu> <label for="ach-icon" data-astro-cid-3x4ghoeu>Icon <small data-astro-cid-3x4ghoeu>(Bootstrap icon class)</small></label> <!--[--><div class="pixel-box input-wrap  svelte-13ydige" style=" --pb-bg: var(--color-base-main); --pb-light: var(--color-base-light); --pb-dark: var(--color-base-dark); color: var(--color-text-2); "><input id="ach-icon" type="text" placeholder="bi-trophy" value="bi-trophy" class="input-field svelte-l7cdkp" data-astro-cid-3x4ghoeu="true"/><!----></div><!--]--> </div> </div> <div class="field checkbox-field" data-astro-cid-3x4ghoeu> <label for="ach-hidden" class="switch-row" data-astro-cid-3x4ghoeu> <input id="ach-hidden" type="checkbox" class="switch-input" data-astro-cid-3x4ghoeu> <span class="switch" data-astro-cid-3x4ghoeu> <span class="switch-thumb" data-astro-cid-3x4ghoeu></span> </span> <span class="switch-label" data-astro-cid-3x4ghoeu>
+Hidden Achievement
+<small data-astro-cid-3x4ghoeu>Name and description are hidden from players until unlocked.</small> </span> </label> </div> <div class="form-actions" data-astro-cid-3x4ghoeu> <!--[--><!--[-1--><button type="button" class="btn v-primary  svelte-zq1vjl" id="save-achievement-btn" data-astro-cid-3x4ghoeu="true"><div class="pixel-box btn-inner btn-primary svelte-13ydige" style=" --pb-bg: var(--color-primary-main); --pb-light: var(--color-primary-light); --pb-dark: var(--color-primary-dark); color: var(--color-text-1); "><!--[0--> <i class="bi bi-check-lg" data-astro-cid-3x4ghoeu></i> Save
+<!----><!--]--><!----></div><!----></button><!--]--><!--]--> <!--[--><!--[-1--><button type="button" class="btn v-ghost  svelte-zq1vjl" id="cancel-achievement-btn" data-astro-cid-3x4ghoeu="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); "><!--[0-->
+Cancel
+<!----><!--]--><!----></div><!----></button><!--]--><!--]--> </div> </div> </div> <!----><!--]--><!----></div><!--]--> </section> <script>(function(){const mapSlug = "the-sunken-temple";
+const apiUrl = "http://localhost:5001";
+const authToken = "mock-session-token";
+
+(function() {
+	var list = document.getElementById("achievement-list");
+	var empty = document.getElementById("achievements-empty");
+	var loading = document.getElementById("achievements-loading");
+	var form = document.getElementById("achievement-form");
+	var formTitle = document.getElementById("form-title");
+	var addBtn = document.getElementById("add-achievement-btn");
+	var saveBtn = document.getElementById("save-achievement-btn");
+	var cancelBtn = document.getElementById("cancel-achievement-btn");
+
+	var achId = document.getElementById("ach-id");
+	var achKey = document.getElementById("ach-key");
+	var achName = document.getElementById("ach-name");
+	var achDesc = document.getElementById("ach-desc");
+	var achType = document.getElementById("ach-type");
+	var achTarget = document.getElementById("ach-target");
+	var achXp = document.getElementById("ach-xp");
+	var achIcon = document.getElementById("ach-icon");
+	var achHidden = document.getElementById("ach-hidden");
+
+	var achievements = [];
+	var isEditing = false;
+
+	function apiHeaders() {
+		return {
+			"Content-Type": "application/json",
+			"Authorization": "Bearer " + (authToken || ""),
+		};
+	}
+
+	function typeLabel(type) {
+		var labels = { completion: "Completion", collectable: "Collectable", speed: "Speed", hidden: "Hidden" };
+		return labels[type] || type;
+	}
+
+	// Achievement names, keys, descriptions and icons are author-supplied, and
+	// recent_unlockers are arbitrary player usernames. All of it lands in
+	// innerHTML below, so it has to be escaped on the way in.
+	function escapeHtml(value) {
+		return String(value == null ? '' : value)
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;')
+			.replace(/'/g, '&#39;');
+	}
+
+	// Bootstrap Icons class names only — anything else is dropped rather than
+	// interpolated into a class attribute.
+	function safeIcon(value) {
+		var icon = String(value == null ? '' : value).trim();
+		return /^bi-[a-z0-9-]+$/.test(icon) ? icon : 'bi-trophy';
+	}
+
+	function typeIcon(type) {
+		var icons = { completion: "bi-flag", collectable: "bi-box-seam", speed: "bi-lightning", hidden: "bi-eye-slash" };
+		return icons[type] || "bi-trophy";
+	}
+
+	function typeColor(type) {
+		var colors = { completion: "#10b981", collectable: "#f59e0b", speed: "#3b82f6", hidden: "#8b5cf6" };
+		return colors[type] || "#9ca3af";
+	}
+
+	function renderList() {
+		if (achievements.length === 0) {
+			list.style.display = "none";
+			empty.style.display = "block";
+			return;
+		}
+
+		list.style.display = "block";
+		empty.style.display = "none";
+
+		list.innerHTML = achievements.map(function(a) {
+			return '<div class="ach-item" data-id="' + Number(a.id) + '">' +
+				'<div class="ach-icon" style="color:' + typeColor(a.type) + '">' +
+					'<i class="bi ' + safeIcon(a.icon) + '"></i>' +
+				'</div>' +
+				'<div class="ach-info">' +
+					'<div class="ach-name-row">' +
+						'<strong>' + escapeHtml(a.name) + '</strong>' +
+						'<span class="ach-type-badge" style="background:rgba(' +
+							(a.type === "speed" ? "59,130,246" : a.type === "hidden" ? "139,92,246" : a.type === "collectable" ? "245,158,11" : "16,185,129") +
+							',0.15);color:' + typeColor(a.type) + '">' +
+							'<i class="bi ' + typeIcon(a.type) + '"></i> ' + escapeHtml(typeLabel(a.type)) +
+						'</span>' +
+					'</div>' +
+					'<span class="ach-key">' + escapeHtml(a.key) + '</span>' +
+					(a.description ? '<span class="ach-desc">' + escapeHtml(a.description) + '</span>' : '') +
+					'<span class="ach-meta">Target: ' + Number(a.target) + ' · +' + Number(a.xp_reward) + ' XP' + (a.is_hidden ? ' · Hidden' : '') + '</span>' +
+			(a.unlock_count != null ? '<span class="ach-unlocks"><i class="bi bi-people-fill"></i> ' + Number(a.unlock_count) + ' player' + (a.unlock_count !== 1 ? 's' : '') + '</span>' : '') +
+				'</div>' +
+				'<div class="ach-actions">' +
+					'<button class="ach-btn edit" data-id="' + Number(a.id) + '" title="Edit"><i class="bi bi-pencil"></i></button>' +
+					'<button class="ach-btn delete" data-id="' + Number(a.id) + '" title="Delete"><i class="bi bi-trash"></i></button>' +
+				'</div>' +
+			'</div>';
+		}).join("");
+
+		// Bind edit buttons
+		list.querySelectorAll(".ach-btn.edit").forEach(function(btn) {
+			btn.addEventListener("click", function() {
+				var id = parseInt(btn.getAttribute("data-id"));
+				var ach = achievements.find(function(a) { return a.id === id; });
+				if (ach) editAchievement(ach);
+			});
+		});
+
+		// Bind delete buttons
+		list.querySelectorAll(".ach-btn.delete").forEach(function(btn) {
+			btn.addEventListener("click", function() {
+				var id = parseInt(btn.getAttribute("data-id"));
+				if (confirm("Delete this achievement? Player unlocks will also be removed.")) {
+					deleteAchievement(id);
+				}
+			});
+		});
+	}
+
+	function resetForm() {
+		isEditing = false;
+		achId.value = "";
+		achKey.value = "";
+		achKey.disabled = false;
+		achName.value = "";
+		achDesc.value = "";
+		achType.value = "completion";
+		achTarget.value = "1";
+		achXp.value = "50";
+		achIcon.value = "bi-trophy";
+		achHidden.checked = false;
+		formTitle.textContent = "Add Achievement";
+	}
+
+	function editAchievement(ach) {
+		isEditing = true;
+		achId.value = ach.id;
+		achKey.value = ach.key;
+		achKey.disabled = true;
+		achName.value = ach.name;
+		achDesc.value = ach.description || "";
+		achType.value = ach.type;
+		achTarget.value = ach.target;
+		achXp.value = ach.xp_reward;
+		achIcon.value = ach.icon || "bi-trophy";
+		achHidden.checked = ach.is_hidden;
+		formTitle.textContent = "Edit Achievement";
+		form.style.display = "block";
+		form.scrollIntoView({ behavior: "smooth" });
+	}
+
+	async function loadAchievements() {
+		loading.style.display = "block";
+		list.style.display = "none";
+		empty.style.display = "none";
+		try {
+			var res = await fetch(apiUrl + "/api/maps/" + mapSlug + "/achievements", {
+				headers: apiHeaders(),
+			});
+			if (!res.ok) throw new Error("Failed to load");
+			achievements = await res.json();
+			renderList();
+		} catch (e) {
+			list.style.display = "block";
+			list.innerHTML = '<div class="loading-state"><i class="bi bi-exclamation-triangle"></i> Failed to load achievements. Are you logged in?</div>';
+		} finally {
+			loading.style.display = "none";
+		}
+	}
+
+	async function saveAchievement() {
+		var key = achKey.value.trim();
+		var name = achName.value.trim();
+		if (!key || !name) {
+			alert("Key and name are required.");
+			return;
+		}
+
+		var body = {
+			key: key,
+			name: name,
+			description: achDesc.value.trim(),
+			type: achType.value,
+			target: parseInt(achTarget.value) || 1,
+			xp_reward: parseInt(achXp.value) || 50,
+			is_hidden: achHidden.checked,
+			icon: achIcon.value.trim() || "bi-trophy",
+		};
+
+		try {
+			var url, method;
+			if (isEditing) {
+				url = apiUrl + "/api/maps/" + mapSlug + "/achievements/" + achId.value;
+				method = "PUT";
+			} else {
+				url = apiUrl + "/api/maps/" + mapSlug + "/achievements";
+				method = "POST";
+			}
+
+			var res = await fetch(url, {
+				method: method,
+				headers: apiHeaders(),
+				body: JSON.stringify(body),
+			});
+
+			if (!res.ok) {
+				var err = await res.json().catch(function() { return {}; });
+				alert(err.error || "Failed to save achievement");
+				return;
+			}
+
+			form.style.display = "none";
+			resetForm();
+			await loadAchievements();
+		} catch (e) {
+			alert("Network error. Please try again.");
+		}
+	}
+
+	async function deleteAchievement(id) {
+		try {
+			var res = await fetch(apiUrl + "/api/maps/" + mapSlug + "/achievements/" + id, {
+				method: "DELETE",
+				headers: apiHeaders(),
+			});
+			if (!res.ok) {
+				alert("Failed to delete achievement");
+				return;
+			}
+			await loadAchievements();
+		} catch (e) {
+			alert("Network error. Please try again.");
+		}
+	}
+
+	// Event listeners
+	addBtn.addEventListener("click", function() {
+		resetForm();
+		form.style.display = "block";
+		form.scrollIntoView({ behavior: "smooth" });
+	});
+
+	cancelBtn.addEventListener("click", function() {
+		form.style.display = "none";
+		resetForm();
+	});
+
+	saveBtn.addEventListener("click", saveAchievement);
+
+	// Initial load
+	loadAchievements();
+	loadActivity();
+
+	async function loadActivity() {
+		try {
+			var res = await fetch(apiUrl + "/api/maps/" + mapSlug + "/achievements/activity", {
+				headers: apiHeaders(),
+			});
+			if (!res.ok || res.status === 403) return;
+			var data = await res.json();
+			if (!Array.isArray(data) || !data.length) return;
+
+			var feed = document.getElementById("activity-feed");
+			var list = document.getElementById("activity-list");
+			var badge = document.getElementById("activity-badge");
+			var totalUnlocks = 0;
+
+			list.innerHTML = data.map(function(item) {
+				totalUnlocks += item.unlock_count;
+				var names = item.recent_unlockers.slice(0, 3).map(escapeHtml).join(", ");
+				var extra = item.recent_unlockers.length > 3 ? " and " + (item.recent_unlockers.length - 3) + " more" : "";
+				return '<div class="activity-item">' +
+					'<div class="activity-icon"><i class="bi ' + safeIcon(item.achievement_icon) + '"></i></div>' +
+					'<div class="activity-body">' +
+						'<span class="activity-text"><strong>' + Number(item.unlock_count) + ' player' + (item.unlock_count !== 1 ? 's' : '') + '</strong> unlocked <strong>' + escapeHtml(item.achievement_name) + '</strong></span>' +
+						'<span class="activity-names">' + names + extra + '</span>' +
+					'</div>' +
+				'</div>';
+			}).join("");
+
+			badge.textContent = totalUnlocks + " unlock" + (totalUnlocks !== 1 ? "s" : "") + " this week";
+			feed.style.display = "block";
+		} catch (_) {}
+	}
+})();
+})();</script> <section class="tab-panel" data-tab-panel="updates" data-astro-cid-xloc43t3>  <div class="updates-layout" data-astro-cid-anflx7e4> <div class="section-heading" data-astro-cid-anflx7e4><div data-astro-cid-anflx7e4><p class="eyebrow" data-astro-cid-anflx7e4>From the creators</p><h2 data-astro-cid-anflx7e4>Updates & events</h2></div><span class="count" data-astro-cid-anflx7e4>2 posts</span></div> <form method="post" action="../../../maps/the-sunken-temple/community-action" class="update-composer" data-astro-cid-anflx7e4> <input type="hidden" name="action" value="update" data-astro-cid-anflx7e4><input type="hidden" name="return_to" value="dashboard" data-astro-cid-anflx7e4> <h3 data-astro-cid-anflx7e4>Share news with followers</h3><p data-astro-cid-anflx7e4>Post an update, or add a date to make it an event.</p> <label data-astro-cid-anflx7e4>Title<input name="title" minlength="3" maxlength="120" placeholder="What’s new?" required data-astro-cid-anflx7e4></label> <label data-astro-cid-anflx7e4>Message<textarea name="body" minlength="10" maxlength="1000" placeholder="Tell players what to expect…" required data-astro-cid-anflx7e4></textarea></label> <div class="composer-footer" data-astro-cid-anflx7e4><label data-astro-cid-anflx7e4>Event date and time in UTC (optional)<input type="datetime-local" name="starts_at" data-astro-cid-anflx7e4></label><button type="submit" data-astro-cid-anflx7e4>Publish update</button></div> </form> <div class="update-list" data-astro-cid-anflx7e4><article class="update-card" data-astro-cid-anflx7e4> <div class="update-meta" data-astro-cid-anflx7e4><span class="type-pill event" data-astro-cid-anflx7e4>Event</span><span data-astro-cid-anflx7e4>Oct 23, 2026, 2:24 AM</span></div> <h3 data-astro-cid-anflx7e4>Community night this Friday!</h3><p class="event-date" data-astro-cid-anflx7e4>◷ Oct 26, 2026, 2:24 AM</p> <p class="update-body" data-astro-cid-anflx7e4>Join the creator for a live playthrough on the public server. Bring friends!</p>  <div class="update-foot" data-astro-cid-anflx7e4><span data-astro-cid-anflx7e4>By BlockSmith</span> <form method="post" action="../../../maps/the-sunken-temple/community-action" data-astro-cid-anflx7e4><input type="hidden" name="action" value="update/remove" data-astro-cid-anflx7e4><input type="hidden" name="id" value="1021" data-astro-cid-anflx7e4><input type="hidden" name="return_to" value="dashboard" data-astro-cid-anflx7e4><button type="submit" class="quiet-button" aria-label="Remove Community night this Friday!" data-astro-cid-anflx7e4>Remove</button></form></div> </article><article class="update-card" data-astro-cid-anflx7e4> <div class="update-meta" data-astro-cid-anflx7e4><span class="type-pill" data-astro-cid-anflx7e4>Update</span><span data-astro-cid-anflx7e4>Oct 20, 2026, 2:24 AM</span></div> <h3 data-astro-cid-anflx7e4>v1.2 is live</h3> <p class="update-body" data-astro-cid-anflx7e4>Balance patch plus two new secret areas. Thanks for all the feedback!</p>  <div class="update-foot" data-astro-cid-anflx7e4><span data-astro-cid-anflx7e4>By BlockSmith</span> <form method="post" action="../../../maps/the-sunken-temple/community-action" data-astro-cid-anflx7e4><input type="hidden" name="action" value="update/remove" data-astro-cid-anflx7e4><input type="hidden" name="id" value="1022" data-astro-cid-anflx7e4><input type="hidden" name="return_to" value="dashboard" data-astro-cid-anflx7e4><button type="submit" class="quiet-button" aria-label="Remove v1.2 is live" data-astro-cid-anflx7e4>Remove</button></form></div> </article></div> </div> </section> <section class="tab-panel team-panel" data-tab-panel="team" data-astro-cid-y2npmtm4> <div class="heading" data-astro-cid-y2npmtm4><div data-astro-cid-y2npmtm4><p class="eyebrow" data-astro-cid-y2npmtm4>Collaboration</p><h2 data-astro-cid-y2npmtm4>Map team</h2><p data-astro-cid-y2npmtm4>Manage who can work on The Sunken Temple.</p></div><span class="count" data-astro-cid-y2npmtm4>3 members</span></div>  <div class="role-guide" data-astro-cid-y2npmtm4><div data-astro-cid-y2npmtm4><strong data-astro-cid-y2npmtm4>Manager</strong><span data-astro-cid-y2npmtm4>Manage team, edit map, publish updates, view analytics</span></div><div data-astro-cid-y2npmtm4><strong data-astro-cid-y2npmtm4>Editor</strong><span data-astro-cid-y2npmtm4>Edit map, upload versions, publish updates, view analytics</span></div><div data-astro-cid-y2npmtm4><strong data-astro-cid-y2npmtm4>Analyst</strong><span data-astro-cid-y2npmtm4>View map analytics</span></div></div> <div class="member-heading" data-astro-cid-y2npmtm4><h3 data-astro-cid-y2npmtm4>Members</h3></div> <div class="members" data-astro-cid-y2npmtm4> <article class="member owner" data-astro-cid-y2npmtm4><img class="avatar" src="../../../_api/cdn/profile/avatar-1.png" alt="" data-astro-cid-y2npmtm4><div class="identity" data-astro-cid-y2npmtm4><a href="../../../user/blocksmith/" data-astro-cid-y2npmtm4>BlockSmith</a><span data-astro-cid-y2npmtm4>Original creator - full map and team access</span></div><span class="role-pill" data-astro-cid-y2npmtm4>Super admin</span></article> <article class="member" data-astro-cid-y2npmtm4> <img class="avatar" src="../../../_api/cdn/profile/avatar-2.png" alt="" data-astro-cid-y2npmtm4> <div class="identity" data-astro-cid-y2npmtm4><a href="../../../user/redstoneraven/" data-astro-cid-y2npmtm4>RedstoneRaven</a><span data-astro-cid-y2npmtm4>Redstone</span></div> <div class="member-actions" data-astro-cid-y2npmtm4> <span class="role-pill" data-astro-cid-y2npmtm4>Redstone</span> <div class="controls" data-astro-cid-y2npmtm4> <form method="post" action="../../../maps/the-sunken-temple/community-action" class="role-form" data-astro-cid-y2npmtm4><input type="hidden" name="action" value="collaborator/role" data-astro-cid-y2npmtm4><input type="hidden" name="user_id" value="2" data-astro-cid-y2npmtm4><select name="role" aria-label="Role for RedstoneRaven" data-astro-cid-y2npmtm4><option value="manager" data-astro-cid-y2npmtm4>Manager</option><option value="editor" data-astro-cid-y2npmtm4>Editor</option><option value="analyst" data-astro-cid-y2npmtm4>Analyst</option></select><button type="submit" data-astro-cid-y2npmtm4>Save role</button></form> <form method="post" action="../../../maps/the-sunken-temple/community-action" data-astro-cid-y2npmtm4><input type="hidden" name="action" value="collaborator/remove" data-astro-cid-y2npmtm4><input type="hidden" name="user_id" value="2" data-astro-cid-y2npmtm4><button type="submit" class="remove" data-astro-cid-y2npmtm4>Remove</button></form> </div> </div> </article><article class="member" data-astro-cid-y2npmtm4> <img class="avatar" src="../../../_api/cdn/profile/avatar-10.png" alt="" data-astro-cid-y2npmtm4> <div class="identity" data-astro-cid-y2npmtm4><a href="../../../user/quartzquill/" data-astro-cid-y2npmtm4>QuartzQuill</a><span data-astro-cid-y2npmtm4>Writing</span></div> <div class="member-actions" data-astro-cid-y2npmtm4> <span class="role-pill" data-astro-cid-y2npmtm4>Writing</span> <div class="controls" data-astro-cid-y2npmtm4> <form method="post" action="../../../maps/the-sunken-temple/community-action" class="role-form" data-astro-cid-y2npmtm4><input type="hidden" name="action" value="collaborator/role" data-astro-cid-y2npmtm4><input type="hidden" name="user_id" value="10" data-astro-cid-y2npmtm4><select name="role" aria-label="Role for QuartzQuill" data-astro-cid-y2npmtm4><option value="manager" data-astro-cid-y2npmtm4>Manager</option><option value="editor" data-astro-cid-y2npmtm4>Editor</option><option value="analyst" data-astro-cid-y2npmtm4>Analyst</option></select><button type="submit" data-astro-cid-y2npmtm4>Save role</button></form> <form method="post" action="../../../maps/the-sunken-temple/community-action" data-astro-cid-y2npmtm4><input type="hidden" name="action" value="collaborator/remove" data-astro-cid-y2npmtm4><input type="hidden" name="user_id" value="10" data-astro-cid-y2npmtm4><button type="submit" class="remove" data-astro-cid-y2npmtm4>Remove</button></form> </div> </div> </article> </div> <form method="post" action="../../../maps/the-sunken-temple/community-action" class="invite-form" data-astro-cid-y2npmtm4><input type="hidden" name="action" value="collaborator" data-astro-cid-y2npmtm4><div data-astro-cid-y2npmtm4><h3 data-astro-cid-y2npmtm4>Invite a teammate</h3><p data-astro-cid-y2npmtm4>They can access this map after accepting your invitation.</p></div><div class="invite-fields" data-astro-cid-y2npmtm4><label data-astro-cid-y2npmtm4>Username<input name="username" placeholder="MapVerse username" required data-astro-cid-y2npmtm4></label><label data-astro-cid-y2npmtm4>Role<select name="role" data-astro-cid-y2npmtm4><option value="editor" data-astro-cid-y2npmtm4>Editor</option><option value="analyst" data-astro-cid-y2npmtm4>Analyst</option><option value="manager" data-astro-cid-y2npmtm4>Manager</option></select></label><button type="submit" data-astro-cid-y2npmtm4>Send invitation</button></div></form> <section class="revenue-section" aria-labelledby="revenue-title" data-astro-cid-y2npmtm4><div class="revenue-heading" data-astro-cid-y2npmtm4><div data-astro-cid-y2npmtm4><h3 id="revenue-title" data-astro-cid-y2npmtm4>Revenue split</h3><p data-astro-cid-y2npmtm4>The original creator controls payouts for this map.</p></div><strong data-astro-cid-y2npmtm4>80% to BlockSmith</strong></div><div class="share-list" data-astro-cid-y2npmtm4><form method="post" action="../../../maps/the-sunken-temple/community-action" class="share-form" data-astro-cid-y2npmtm4><input type="hidden" name="action" value="collaborator/share" data-astro-cid-y2npmtm4><input type="hidden" name="user_id" value="2" data-astro-cid-y2npmtm4><span data-astro-cid-y2npmtm4>RedstoneRaven</span><label data-astro-cid-y2npmtm4><span class="sr-only" data-astro-cid-y2npmtm4>Revenue percentage for RedstoneRaven</span><input type="number" name="percent" min="0" max="90" value="10" required data-astro-cid-y2npmtm4> %</label><button type="submit" data-astro-cid-y2npmtm4>Save share</button></form><form method="post" action="../../../maps/the-sunken-temple/community-action" class="share-form" data-astro-cid-y2npmtm4><input type="hidden" name="action" value="collaborator/share" data-astro-cid-y2npmtm4><input type="hidden" name="user_id" value="10" data-astro-cid-y2npmtm4><span data-astro-cid-y2npmtm4>QuartzQuill</span><label data-astro-cid-y2npmtm4><span class="sr-only" data-astro-cid-y2npmtm4>Revenue percentage for QuartzQuill</span><input type="number" name="percent" min="0" max="90" value="10" required data-astro-cid-y2npmtm4> %</label><button type="submit" data-astro-cid-y2npmtm4>Save share</button></form></div><p class="share-note" data-astro-cid-y2npmtm4>Allocated to teammates: 20%. Changes apply to future revenue periods.</p></section> </section>  <section class="tab-panel" data-tab-panel="delete" data-astro-cid-vo2ojmqd> <!--[--><div class="pixel-box card tab-card svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-vo2ojmqd="true"><!--[0--> <div class="tab-content" data-astro-cid-vo2ojmqd> <h2 data-astro-cid-vo2ojmqd>Delete Map</h2> <div class="delete-warning" data-astro-cid-vo2ojmqd> <strong data-astro-cid-vo2ojmqd>This action is permanent.</strong> <p data-astro-cid-vo2ojmqd>
+Deleting this map will permanently remove it from MapVerse.
+					Players will no longer be able to play this map, and this cannot be undone.
+</p> </div> <!--[--><!--[-1--><button type="button" class="btn v-danger js-delete-map svelte-zq1vjl" data-map-slug="the-sunken-temple" data-astro-cid-vo2ojmqd="true"><div class="pixel-box btn-inner  svelte-13ydige" style=" --pb-bg: var(--color-danger-main); --pb-light: var(--color-danger-light); --pb-dark: var(--color-danger-dark); color: white; "><!--[0-->
+Delete Map
+<!----><!--]--><!----></div><!----></button><!--]--><!--]--> </div> <!----><!--]--><!----></div><!--]--> </section> <script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const deleteButton = document.querySelector(".js-delete-map");
+
+		if (!(deleteButton instanceof HTMLElement)) {
+			return;
+		}
+
+		if (deleteButton.dataset.bound === "true") {
+			return;
+		}
+
+		deleteButton.dataset.bound = "true";
+
+		deleteButton.addEventListener("click", async () => {
+			if (deleteButton.dataset.deleting === "true") {
+				return;
+			}
+
+			const mapSlug = deleteButton.getAttribute("data-map-slug");
+
+			if (!mapSlug) {
+				return;
+			}
+
+			const confirmed = await window.mapverseConfirm(
+				"This will permanently delete this map. Players will not be able to play it anymore. Do you want to continue?", { title: "Delete Map", variant: "danger", confirmText: "Delete Forever" }
+			);
+
+			if (!confirmed) {
+				return;
+			}
+
+			deleteButton.dataset.deleting = "true";
+			deleteButton.setAttribute("disabled", "true");
+
+			try {
+				const response = await fetch(`/api/maps/${encodeURIComponent(mapSlug)}/delete`, { method: "POST" });
+				if (!response.ok) throw new Error("Unable to delete this map. Please try again.");
+				window.location.href = "/dashboard/maps";
+			} catch (error) {
+				window.showToast?.(error instanceof Error ? error.message : "Unable to delete this map. Please try again.", "danger", "bi bi-exclamation-triangle");
+				deleteButton.dataset.deleting = "false";
+				deleteButton.removeAttribute("disabled");
+			}
+		});
+	}, { once: true });
+</script> </div> </div> <!----><!--]--><!----></div><!--]--> </div> <div class="dashboard-sidebar" data-astro-cid-bk6kidus> <!--[--><div class="pixel-box card  svelte-13ydige" style=" --pb-bg: var(--color-secondary-main); --pb-light: var(--color-secondary-light); --pb-dark: var(--color-secondary-dark); color: var(--color-text-2); " data-astro-cid-hbqfw4sq="true"><!--[0--> <nav class="sidebar" aria-label="Dashboard" data-astro-cid-hbqfw4sq> <h2 data-astro-cid-hbqfw4sq>Dashboard</h2> <a href="../../../dashboard/" data-astro-cid-hbqfw4sq><i class="bi bi-grid-1x2" aria-hidden="true" data-astro-cid-hbqfw4sq></i>Dashboard</a><a href="../../../dashboard/maps/" data-astro-cid-hbqfw4sq><i class="bi bi-box-seam" aria-hidden="true" data-astro-cid-hbqfw4sq></i>My Maps</a><a href="../../../collections/" data-astro-cid-hbqfw4sq><i class="bi bi-collection" aria-hidden="true" data-astro-cid-hbqfw4sq></i>Collections</a><a href="../../../dashboard/progression/" data-astro-cid-hbqfw4sq><i class="bi bi-bar-chart-steps" aria-hidden="true" data-astro-cid-hbqfw4sq></i>Progression</a><a href="../../../dashboard/achievements/" data-astro-cid-hbqfw4sq><i class="bi bi-award" aria-hidden="true" data-astro-cid-hbqfw4sq></i>Achievements</a><a href="../../../dashboard/friends/" data-astro-cid-hbqfw4sq><i class="bi bi-people-fill" aria-hidden="true" data-astro-cid-hbqfw4sq></i>Friends</a><a href="../../../dashboard/leaderboard/" data-astro-cid-hbqfw4sq><i class="bi bi-trophy" aria-hidden="true" data-astro-cid-hbqfw4sq></i>Leaderboard</a><a href="../../../dashboard/reports/" data-astro-cid-hbqfw4sq><i class="bi bi-flag" aria-hidden="true" data-astro-cid-hbqfw4sq></i>Reports</a><a href="../../../dashboard/revenue/" data-astro-cid-hbqfw4sq><i class="bi bi-cash-coin" aria-hidden="true" data-astro-cid-hbqfw4sq></i>Revenue</a> </nav> <!----><!--]--><!----></div><!--]--> </div> </div> </section>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte> <div class="footer-brand" data-astro-cid-sz7xmlte> <a href="../../../" style="text-decoration: none;" data-astro-cid-sz7xmlte> <astro-island uid="Z1eStpR" component-url="../../../_astro/index.DFgZ-_26.js" component-export="MapVerseLogo" renderer-url="../../../_astro/client.svelte.Tl7DXQbT.js" props="{&quot;data-astro-cid-sz7xmlte&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;MapVerseLogo&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="mapverse-logo svelte-rvzw0t" data-footer="false"><svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 210 210"><defs><linearGradient id="b"><stop offset="0" style="stop-color:#44387d;stop-opacity:1"></stop><stop offset=".5" style="stop-color:#000;stop-opacity:1"></stop><stop offset="1" style="stop-color:#44387d;stop-opacity:1"></stop></linearGradient><linearGradient id="a"><stop offset="0" style="stop-color:#a680ff;stop-opacity:1"></stop><stop offset="1" style="stop-color:#705ea9;stop-opacity:0"></stop></linearGradient><radialGradient id="d" cx="105" cy="105" r="86.174" fx="105" fy="105" gradientTransform="matrix(1 0 0 1.1547 0 -16.244)" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:#a680ff;stop-opacity:1"></stop><stop offset="1" style="stop-color:#705ea9;stop-opacity:0"></stop></radialGradient></defs><g transform="translate(-4.716 -4.716)scale(1.04491)"><path d="M21.576 56.835 105 105v96.33V105l83.424-48.165L105 105Zm166.848 96.33L105 201.33l-83.424-48.165v-96.33L105 8.67l83.424 48.165Z" style="fill:url(#d);stroke:#e2ff5e;stroke-width:7.2;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"></path><path d="m20.105 90.542 6.562 3.837v5.823l8.416 4.922-.029 4.153 5.214 3.129v6.17l4.176 2.442v12.143l5.214 3.049v10.589l3.786 2.213v20.706l5.5 3.216v10.99l17.162 10.036 3.34-2.854-.092-16.653 4.48 2.62 5.778-3.38v-6.627l4.36-2.55V146.42l-22.96-13.425v-5.896l-10.441-6.106v-5.259l-5.525-3.271v-3.737l5.059-2.958V89.406l10.377-6.069v-6.243l-14.08-8.234v-8.814l-5.304-3.101v-5.422l-8.499-4.97v-6.206l-4.69-2.742-7.205 4.213.049 2.857-16.5 10.035v31.286l5.852 3.422zM65.912 47.566l14.463 7.714 4.852-2.802 4.678 2.702 4.735-2.734 9.653 5.574 4.425-2.555 4.45 2.57 10.107-5.836v-10.57l-14.971-8.644-4.602 2.657-4.504-2.6-3.694 2.133-9.489-5.479L65.902 41.31z" style="fill:#e2ff5e;fill-opacity:1;stroke:#000;stroke-width:0;"></path><path d="M81.426 19.428v-7.884l4.298-2.289 3.437 1.83 5.97-3.179 7.717 4.11-3.658-1.948 6.262-3.335 4.555 2.426 3.779-2.012L195.82 50.83v18.855l-3.382 1.8v3.416l3.593 1.913v35.25l-3.924 2.09-5.167 12.862-2.2.827-2.294 1.425.188 11.485-2.957 1.826v5.215L168.4 153.8l-8.935-4.758v-17.547l-4.996 2.66-6.758-3.599v-4.407l-4.875 2.596-9.934-5.29V107.11l6.948-3.7v-5.82l5.076-2.703v-11.28l14.294-7.346-5.197 3.649.347-7.802 3.61-.39v0l22.289-11.87-6.261-3.333-6.637 3.534-12.976-6.91v-5.883l-4.615-2.457v-4.845l-5.048 2.688-10.322-5.496v-5.798l-13.874-7.388-5.954 3.17-24.835-13.225zM116.48 148.102v17.078l15.128 8.734 6.067-3.503v-6.832l4.199-2.424v-6.649l-5.175-2.988v-5.284l-9.84-5.68-10.423 6.017zM14.73 146.06v13.11l10.84 6.003 4.347-2.97v-5.244l3.009-2.056v-7.464l-9.733-5.785v0l-8.495 3.233z" style="fill:#e2ff5e;fill-opacity:1;stroke:#000;stroke-width:0;"></path></g></svg> <!--[0--><span class="logo-text svelte-rvzw0t">MapVerse</span><!--]--></div><!--]--><!--astro:end--></astro-island> </a> <div class="footer-socials" data-astro-cid-sz7xmlte> <a href="https://youtube.com/@mapverse_net" target="_blank" rel="noreferrer" aria-label="YouTube" style="--color-social: var(--color-social-youtube)" data-astro-cid-sz7xmlte> <i class="bi bi-youtube" data-astro-cid-sz7xmlte></i> </a> <a href="https://discord.gg/xFgTJtebgp" target="_blank" rel="noreferrer" aria-label="Discord" style="--color-social: var(--color-social-discord)" data-astro-cid-sz7xmlte> <i class="bi bi-discord" data-astro-cid-sz7xmlte></i> </a> <a href="https://twitter.com/mapverse_net" target="_blank" rel="noreferrer" aria-label="Twitter / X" style="--color-social: var(--color-social-twitter)" data-astro-cid-sz7xmlte> <i class="bi bi-twitter-x" data-astro-cid-sz7xmlte></i> </a> </div> </div> <div class="footer-links" data-astro-cid-sz7xmlte> <div class="footer-column" data-astro-cid-sz7xmlte> <span class="footer-title" data-astro-cid-sz7xmlte>Pages</span> <a href="../../../discover/" data-astro-cid-sz7xmlte>Discover</a> <a href="../../../cosmetics/" data-astro-cid-sz7xmlte>Cosmetics &amp; emotes</a> <a href="../../../mod/" data-astro-cid-sz7xmlte>Download the mod</a> <a href="../../../jams/" data-astro-cid-sz7xmlte>Map Jams</a> <a href="../../../mapmakers/" data-astro-cid-sz7xmlte>Become a Mapmaker</a> <a href="../../../#latest-maps" data-astro-cid-sz7xmlte>Latest Maps</a> </div> <div class="footer-column" data-astro-cid-sz7xmlte> <span class="footer-title" data-astro-cid-sz7xmlte>About</span> <a href="../../../help/" data-astro-cid-sz7xmlte>Help Center</a> <a href="https://blog.mapverse.net" target="_blank" data-astro-cid-sz7xmlte>Blog</a> <a href="../../../help/" data-astro-cid-sz7xmlte>Report Issues</a> </div> <div class="footer-column" data-astro-cid-sz7xmlte> <span class="footer-title" data-astro-cid-sz7xmlte>Legal</span> <a href="../../../terms/" data-astro-cid-sz7xmlte>Terms of Use</a> <a href="../../../privacy/" data-astro-cid-sz7xmlte>Privacy Policy</a> <a href="../../../content-policy/" data-astro-cid-sz7xmlte>Content Policy</a> </div> </div> </div> <p class="footer-copy" data-astro-cid-sz7xmlte>
+&copy; MapVerse. All rights reserved.<br data-astro-cid-sz7xmlte>
+NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG.
+</p> </footer>  <astro-island uid="Z13MgKN" component-url="../../../_astro/index.DFgZ-_26.js" component-export="ToastContainer" renderer-url="../../../_astro/client.svelte.Tl7DXQbT.js" props="{&quot;data-astro-cid-37fxchfa&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;ToastContainer&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="toast-container svelte-1mamzwf"><!--[--><!--]--></div><!--]--><!--astro:end--></astro-island>  <script>
+			window.showToast = function(message, variant, icon, duration) {
+				window.dispatchEvent(new CustomEvent("mapverse:toast", {
+					detail: { message: message, variant: variant || "secondary", icon: icon || "", duration: duration || 4000 }
+				}));
+			};
+		</script> <script>
+			(function() {
+				function revealImage(img) {
+					img.classList.add("loaded");
+					var wrap = img.closest(".map-thumb-wrap, .sidebar-thumb-wrap");
+					if (wrap) wrap.classList.add("loaded");
+				}
+
+				function initImageSkeletons() {
+					var images = document.querySelectorAll(".map-thumb, .sidebar-map-thumb");
+					for (var i = 0; i < images.length; i++) {
+						var img = images[i];
+						if (img.complete && img.naturalHeight > 0) {
+							revealImage(img);
+						} else {
+							img.addEventListener("load", function() { revealImage(this); });
+							img.addEventListener("error", function() { revealImage(this); });
+						}
+					}
+				}
+
+				if (document.readyState === "loading") {
+					document.addEventListener("DOMContentLoaded", initImageSkeletons);
+				} else {
+					initImageSkeletons();
+				}
+
+				var observer = new MutationObserver(function(mutations) {
+					for (var i = 0; i < mutations.length; i++) {
+						var added = mutations[i].addedNodes;
+						for (var j = 0; j < added.length; j++) {
+							var node = added[j];
+							if (node.nodeType !== 1) continue;
+							var imgs = node.querySelectorAll ? node.querySelectorAll(".map-thumb, .sidebar-map-thumb") : [];
+							for (var k = 0; k < imgs.length; k++) {
+								var img = imgs[k];
+								if (img.complete && img.naturalHeight > 0) {
+									revealImage(img);
+								} else {
+									img.addEventListener("load", function() { revealImage(this); });
+									img.addEventListener("error", function() { revealImage(this); });
+								}
+							}
+						}
+					}
+				});
+				observer.observe(document.body, { childList: true, subtree: true });
+
+				var bar = document.getElementById("page-progress-bar");
+				if (bar) {
+					var hasNavigation = (window.performance && performance.getEntriesByType && performance.getEntriesByType("navigation").length > 0 && performance.getEntriesByType("navigation")[0].type !== "reload" && performance.getEntriesByType("navigation")[0].type !== "back_forward" && document.referrer && document.referrer.includes(window.location.host));
+
+					if (hasNavigation || sessionStorage.getItem("mv_navigating") === "1") {
+						sessionStorage.removeItem("mv_navigating");
+						bar.style.transition = "none";
+						bar.style.width = "70%";
+						bar.style.opacity = "1";
+						void bar.offsetWidth;
+						bar.style.transition = "width 0.2s ease, opacity 0.3s ease 0.2s";
+						bar.style.width = "100%";
+						bar.style.opacity = "0";
+					}
+
+					document.addEventListener("click", function(e) {
+						var link = e.target.closest("a[href]");
+						if (!link) return;
+						var href = link.getAttribute("href");
+						if (!href || href.startsWith("#") || href.startsWith("javascript") || link.target === "_blank") return;
+						if (href.startsWith("http") && !href.includes(window.location.host)) return;
+						sessionStorage.setItem("mv_navigating", "1");
+					});
+				}
+			})();
+		</script> <script>
+				(function() {
+					function isEditableTarget(target) {
+						if (!(target instanceof HTMLElement)) return false;
+						return target.matches("input, textarea, select, [contenteditable='true']");
+					}
+
+					function focusGlobalSearch() {
+						var search = document.getElementById("global-search");
+						if (!(search instanceof HTMLInputElement)) return;
+						search.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+						search.focus();
+						search.select();
+					}
+
+					document.addEventListener("keydown", function(event) {
+						if (event.defaultPrevented) return;
+						if (!(event.ctrlKey || event.metaKey) || event.key.toLowerCase() !== "k") return;
+						if (event.altKey || event.shiftKey) return;
+						if (isEditableTarget(event.target)) return;
+						if (document.querySelector("dialog[open]")) return;
+
+						event.preventDefault();
+						focusGlobalSearch();
+					});
+				})();
+			</script> </body> </html> <script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const tabs = Array.from(document.querySelectorAll("[data-tab]"));
+		const panels = Array.from(document.querySelectorAll("[data-tab-panel]"));
+		const approveButtons = document.querySelectorAll(".js-approve-map");
+		const denyButtons = document.querySelectorAll(".js-deny-map");
+		const disapproveButtons = document.querySelectorAll(".js-disapprove-map");
+
+		for (const button of approveButtons) {
+			button.addEventListener("click", async () => {
+				const mapSlug = button.getAttribute("data-map-slug");
+
+				if (!mapSlug) return;
+
+				const response = await fetch(`/api/maps/${mapSlug}/approve`, {
+					method: "POST",
+				});
+
+				if (!response.ok) return;
+
+				window.location.reload();
+			});
+		}
+
+		for (const button of denyButtons) {
+			button.addEventListener("click", async () => {
+				const mapSlug = button.getAttribute("data-map-slug");
+
+				if (!mapSlug) return;
+
+				const reason = window.prompt("Reason for denial:");
+
+				if (!reason || !reason.trim()) return;
+
+				const response = await fetch(`/api/maps/${mapSlug}/deny`, {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ reason: reason.trim() }),
+				});
+
+				if (!response.ok) return;
+
+				window.location.reload();
+			});
+		}
+
+		for (const button of disapproveButtons) {
+			button.addEventListener("click", async () => {
+				const mapSlug = button.getAttribute("data-map-slug");
+
+				if (!mapSlug) return;
+
+				const reason = window.prompt("Reason for disapproval:");
+
+				if (!reason || !reason.trim()) return;
+
+				const response = await fetch(`/api/maps/${mapSlug}/disapprove`, {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ reason: reason.trim() }),
+				});
+
+				if (!response.ok) return;
+
+				window.location.reload();
+			});
+		}
+
+		function setActiveTab(tabName) {
+			if (!tabs.some(tab => tab.getAttribute('data-tab') === tabName)) tabName = 'analytics';
+			for (const tab of tabs) {
+				const isActive = tab.getAttribute("data-tab") === tabName;
+				tab.classList.toggle("is-active", isActive);
+			}
+
+			for (const panel of panels) {
+				const isActive = panel.getAttribute("data-tab-panel") === tabName;
+				panel.classList.toggle("is-active", isActive);
+			}
+
+			if (tabName === "analytics") {
+				window.dispatchEvent(new Event("renderAnalyticsChart"));
+			}
+		}
+
+		window.addEventListener("tabChange", event => setActiveTab(event.detail.activeTab));
+
+		const urlParams = new URLSearchParams(window.location.search);
+		const initialTab = urlParams.get("tab") || "analytics";
+		setActiveTab(initialTab);
+	});
+</script>
