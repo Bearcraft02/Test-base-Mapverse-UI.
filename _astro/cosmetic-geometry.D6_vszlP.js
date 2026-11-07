@@ -1,0 +1,1 @@
+function d(p,i=[]){let t=[...p];for(let o=i.length-1;o>=0;o--){const s=i[o];t=t.map((n,a)=>n*s.scale[a]),s.rotation.forEach((n,a)=>{const[c,e]=[[1,2],[2,0],[0,1]][a],r=n*Math.PI/180,h=Math.cos(r),l=Math.sin(r);[t[c],t[e]]=[t[c]*h-t[e]*l,t[c]*l+t[e]*h]}),t=t.map((n,a)=>n+s.translation[a])}return t}export{d as t};
