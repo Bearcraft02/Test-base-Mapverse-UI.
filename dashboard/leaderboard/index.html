@@ -477,6 +477,8 @@ const authToken = "mock-session-token";
 	var tabs = document.querySelectorAll("#leaderboard-scope .scope-tab");
 	var currentScope = "global";
 	var token = authToken;
+	// keep what each tab showed: the global list arrives with the page, so switching back never re-downloads it
+	var cache = { global: list.innerHTML };
 
 	function esc(value) {
 		return String(value == null ? "" : value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
@@ -510,6 +512,7 @@ const authToken = "mock-session-token";
 	function message(text) { list.innerHTML = '<p class="lb-empty">' + esc(text) + "</p>"; }
 
 	async function loadLeaderboard(scope) {
+		if (cache[scope]) { list.innerHTML = cache[scope]; return; }
 		message("Loading…");
 		var url = PUBLIC_API_URL + "/api/users/leaderboard?limit=30&scope=" + scope;
 		var headers = {};
@@ -520,9 +523,12 @@ const authToken = "mock-session-token";
 		try {
 			var res = await fetch(url, { headers: headers });
 			var data = res.ok ? await res.json() : [];
+			if (currentScope !== scope) return; // the visitor switched tabs while this loaded
 			if (!Array.isArray(data) || !data.length) { message(scope === "friends" ? "No friends on the leaderboard yet. Add some friends and earn XP together!" : "No leaderboard data yet. Be the first to earn XP!"); return; }
 			render(data);
+			if (currentScope === scope) cache[scope] = list.innerHTML;
 		} catch (_) {
+			if (currentScope !== scope) return;
 			message("Couldn't load the leaderboard. Try again in a moment.");
 		}
 	}
