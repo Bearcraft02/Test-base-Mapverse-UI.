@@ -365,6 +365,8 @@
 				(function () {
 					var drawer = document.getElementById("filter-drawer"), scrim = document.querySelector(".filter-scrim"), openBtn = document.querySelector(".filter-open"), closeBtn = document.querySelector(".filter-close");
 					if (!drawer || !openBtn) return;
+					// a parent of the drawer contains fixed panels (it ends where the page content ends), so lift the drawer and its scrim to <body>
+					document.body.append(drawer); if (scrim) document.body.append(scrim);
 					function set(open) {
 						drawer.classList.toggle("open", open); if (scrim) scrim.hidden = !open; openBtn.setAttribute("aria-expanded", String(open));
 						document.documentElement.classList.toggle("drawer-locked", open);
